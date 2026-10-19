@@ -426,6 +426,37 @@ footer .tiny{line-height:1.5}
 }
 @media print{.copy-phone,.copy-alias,.copy-status{display:none!important}.print-sheet{height:auto;min-height:0;overflow:visible}}
 
+
+/* Ajuste final: Solcito de bolsillo y cartelito solidario permanente */
+@media screen{
+ body{font-size:17px;line-height:1.42}
+ .hero{padding:12px 0 14px}.welcome{margin:10px 0;font-size:1rem}
+ .belonging{padding:10px 12px;margin:9px 0}.hero-note{margin:8px 0;padding:8px 10px}
+ .solcito-nav{padding:7px 9px;gap:6px}.solcito-nav a{min-height:36px;padding:6px 10px;font-size:.86rem}
+ main.wrap{padding-top:10px;padding-bottom:76px}.intro{padding:12px}.intro h2{margin:0 0 6px;font-size:1.2rem}.intro p{margin:5px 0}
+ .emergency{margin:10px 0;padding:10px}.emergency-grid{gap:6px;margin-top:7px}.emergency-link{min-height:54px;padding:7px 9px}
+ .toolbar{margin:10px 0;padding:9px}.section-title{margin:13px 0 7px}.cards{gap:7px}
+ .card{padding:10px;border-radius:13px}.cardhead{gap:7px;margin-bottom:4px}.symbol{width:34px;height:34px;font-size:20px}
+ .card h3{font-size:1.02rem}.phone{font-size:clamp(1.55rem,4.5vw,1.9rem);margin:4px 0 6px}
+ .detail{font-size:.9rem}.source{font-size:.78rem;margin-top:7px;padding-top:5px}.note{margin:12px 0;padding:10px}
+ .doodle-garden{margin-top:12px}footer{padding:15px 0 20px}
+ .donate-float{position:fixed;z-index:9999;right:12px;bottom:12px;left:auto;top:auto;width:248px;display:grid;grid-template-columns:22px minmax(0,1fr);gap:3px 7px;align-items:center;padding:8px 10px;background:linear-gradient(120deg,#fff5cd,#fff0f3 72%,#f5efff);border:1px solid #d8b8a8;border-radius:13px;box-shadow:0 4px 16px #624a3628;color:#38433d}
+ .donate-float-flower{font-size:19px;grid-row:1/3;align-self:start}.donate-float-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+ .donate-float-copy strong{font-size:.79rem;line-height:1.18;color:#315746}.donate-float-copy span{font-size:.68rem;line-height:1.2}
+ .donate-float-copy .donate-alias{font-size:.7rem;font-weight:700;overflow-wrap:anywhere}.donate-alias b{font-size:.74rem}
+ .donate-holder{display:none!important}.copy-alias{grid-column:2;justify-self:start;min-height:28px;padding:4px 8px;font-size:.68rem;border-radius:8px}
+}
+@media(max-width:690px){
+ main.wrap{padding-bottom:105px}
+ .donate-float{left:7px;right:7px;bottom:6px;top:auto;width:auto;grid-template-columns:19px minmax(0,1fr) auto;gap:2px 6px;padding:6px 8px;border-radius:12px}
+ .donate-float-flower{font-size:17px;grid-column:1;grid-row:1/3}.donate-float-copy{grid-column:2;grid-row:1/3;gap:2px}
+ .donate-float-copy strong{font-size:.73rem}.donate-float-copy span{font-size:.62rem;line-height:1.16}
+ .donate-float-copy .donate-alias{font-size:.65rem}.donate-alias b{font-size:.68rem}
+ .copy-alias{grid-column:3;grid-row:1/3;align-self:center;padding:6px;font-size:.65rem;min-height:32px}
+ .phone{font-size:clamp(1.55rem,7vw,1.9rem)}.actions .btn{flex:1 1 100%}
+}
+@media print{.donate-float{position:static!important;width:auto!important;box-shadow:none!important;margin:8px 0!important}main.wrap{padding-bottom:0!important}.copy-phone,.copy-alias,.copy-status{display:none!important}.print-sheet{height:auto;min-height:0;overflow:visible}}
+
 </style>
 </head>
 <body>
@@ -662,15 +693,14 @@ footer .tiny{line-height:1.5}
 <svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Estrellitas de esperanza"><path d="M40 8l7 20 21 1-16 13 5 21-17-12-17 12 5-21L12 29l21-1z" fill="#ffd56d" stroke="#d6a348" stroke-width="2.5" stroke-linejoin="round"/><circle cx="17" cy="15" r="3" fill="#eaa3b5"/><circle cx="66" cy="16" r="3" fill="#9fcfb7"/><circle cx="12" cy="59" r="3" fill="#b8a6ed"/></svg>
 <svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Pajarito volando"><path d="M8 42q13-18 26 0 13-18 26 0" fill="none" stroke="#8ebfd4" stroke-width="5" stroke-linecap="round"/><path d="M47 25l9-10m-9 10 13-2" fill="none" stroke="#8ebfd4" stroke-width="3" stroke-linecap="round"/><path d="M16 61q7-7 14 0t14 0t14 0" fill="none" stroke="#edb0c0" stroke-width="3" stroke-linecap="round"/></svg>
 </div>
-<aside class="donate-float" id="colaborar" aria-label="Colaboración voluntaria con Solcito">
-  <div class="donate-float-flower" aria-hidden="true">🌼</div>
+<aside class="donate-float" id="colaborar" aria-label="Cartelito de colaboración voluntaria">
+  <span class="donate-float-flower" aria-hidden="true">🌼</span>
   <div class="donate-float-copy">
-    <strong>Ayudá a mantener Solcito</strong>
-    <span>Tu aporte voluntario ayuda a sostener y mejorar este proyecto. Nunca es requisito para usar la agenda.</span>
-    <span class="donate-alias">Alias: <b>ocarina.guitarra</b></span>
-    <span class="donate-holder">Titular: <b>Elías Martínez</b></span>
+    <strong>¿Nos ayudás a cuidar Solcito?</strong>
+    <span>Si te nace, podés colaborar. Usarla es siempre gratis 💛</span>
+    <span class="donate-alias">Alias <b>ocarina.guitarra</b> · Elías Martínez</span>
   </div>
-  <button class="copy-alias" type="button" aria-label="Copiar alias de donación">Copiar alias</button>
+  <button class="copy-alias" type="button" aria-label="Copiar alias ocarina.guitarra">Copiar alias</button>
 </aside>
 <footer><div class="wrap"><p><strong>☀️ Solcito — Una mano amiga, cerquita tuyo</strong></p><p>Una iniciativa comunitaria sin ánimo de lucro de Ocarina Producciones, creada por Elías Martínez para acercar información útil a vecinos, familias y comunidades rurales de San Patricio del Chañar.</p><p class="tiny">Los datos se recopilan de fuentes municipales, provinciales y registros públicos educativos consultados el 19 de octubre de 2026. Algunos teléfonos escolares provienen de directorios públicos y están marcados para confirmar: Solcito no los presenta como verificados en tiempo real. La publicación no implica respaldo institucional. Si encontrás un dato que cambió, confirmalo con la institución.</p><p class="tiny">Creado con cariño por Elías Martínez · Ocarina Producciones. 🌼 Sin cuentas, sin instalación y sin pedir datos personales.</p></div></footer>
 <script>
