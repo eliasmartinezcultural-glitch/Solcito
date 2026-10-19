@@ -23,7 +23,37 @@ h2{font-size:clamp(1.6rem,5vw,2.15rem);line-height:1.2;margin:0 0 10px;color:#35
 .cardhead{display:flex;gap:12px;align-items:center;margin-bottom:11px}.symbol{width:55px;height:55px;border-radius:18px;display:grid;place-items:center;background:#fff0bd;font-size:30px;flex-shrink:0;border:1px solid #f2df9e}.category{font-size:.83rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#657168;margin:10px 0 3px}.phone{font-size:clamp(1.8rem,7vw,2.7rem);line-height:1.15;font-weight:900;letter-spacing:.015em;margin:0 0 9px;color:#315746;overflow-wrap:anywhere}.detail{font-size:1.02rem}.source{font-size:.9rem;border-top:1px solid #e6e1db;margin-top:13px;padding-top:10px}.badge{display:inline-block;background:#e4f2e8;color:#2f634e;border-radius:999px;padding:3px 9px;font-size:.83rem;font-weight:800;margin-bottom:7px}.badge.caution{background:#fff0c7;color:#76520a}.empty{background:#fff;border:2px dashed #cfc7d4;border-radius:20px;padding:22px;text-align:center;display:none}.contact-card[hidden]{display:none!important}.section-intro{margin:0 0 13px;color:var(--muted)}.card .detail a{font-weight:800}.school-card .symbol{background:#e7e2ff}.community-card .symbol{background:#ffe2e9}.mini-label{display:inline-block;font-size:.82rem;font-weight:800;background:#f2edff;color:#584d83;border-radius:999px;padding:4px 9px;margin:0 0 8px}.note{background:#fff0c7;border-left:7px solid #d9a33c;border-radius:12px;padding:17px;margin:23px 0}.donate{background:linear-gradient(135deg,#ffe7ec,#fff1c8);border:2px solid #efc7cc;border-radius:25px;padding:22px;margin-top:30px}.alias{display:inline-block;background:#fff;border:2px dashed #d4a5ae;border-radius:12px;padding:10px 14px;font-weight:800}.heart{font-size:2rem}footer{background:#e8f2e9;border-top:4px solid #c5e0cf;padding:25px 0 32px}.tiny{font-size:.9rem;color:#606a63}
 @media(min-width:690px){.cards{grid-template-columns:1fr 1fr}.span2{grid-column:span 2}.emergency-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:390px){body{font-size:18px}.emergency-grid{grid-template-columns:1fr}.sun{width:62px;height:62px;font-size:36px}.sticker{display:none}}
-@media print{body{background:#fff;font-size:14px}.wrap{width:100%}.hero{background:#fff!important;padding:8px 0;border-bottom:2px solid #333}.sun{box-shadow:none;border:1px solid #333}.intro,.card,.emergency,.donate{box-shadow:none;break-inside:avoid;background:#fff!important}.cards{grid-template-columns:1fr 1fr}.phone{font-size:23pt}.actions,.toolbar,.sticker{display:none!important}.emergency-grid{grid-template-columns:repeat(3,1fr)}a{color:#000;text-decoration:none}footer{background:#fff}.section-title{margin-top:16px}}
+
+/* Compactación de pantalla: menos aire, más agenda visible */
+@media(min-width:690px){.hero{padding:20px 0 24px}.welcome{margin-top:15px;font-size:1.08rem}.belonging{margin-top:14px;padding:14px 17px}.intro{padding:17px}.section-title{margin:22px 0 10px}.card{padding:14px}.cardhead{gap:9px;margin-bottom:7px}.symbol{width:45px;height:45px;font-size:25px;border-radius:14px}.phone{font-size:2.15rem}.source{margin-top:9px;padding-top:7px}}
+.print-sheet{display:none}
+@page{size:A4 portrait;margin:7mm}
+@media print{
+  html,body{width:100%;margin:0!important;padding:0!important;background:#fff!important;color:#20252a!important;font:7.6pt/1.16 Arial,Helvetica,sans-serif!important}
+  body>*:not(.print-sheet){display:none!important}
+  .print-sheet{display:block!important;width:100%;height:282mm;overflow:hidden;padding:0}
+  .print-head{display:flex;align-items:center;gap:9px;border-bottom:1.5pt solid #80a994;padding:0 0 5px;margin:0 0 5px}
+  .print-sun{display:grid;place-items:center;width:34px;height:34px;border:1.5pt solid #e7bd4b;border-radius:50%;background:#fff0bd;font-size:23pt;color:#356754;flex-shrink:0}
+  .print-head h1{font-size:23pt;line-height:1;margin:0;color:#356754;letter-spacing:-.5pt}
+  .print-head h1 span{font-size:13pt}
+  .print-head p{font-size:9pt;font-weight:bold;margin:3px 0 0;color:#765565}
+  .print-welcome{font-size:8.2pt;line-height:1.2;margin:0 0 6px;padding:6px 8px;border:1pt dashed #d7a4b6;border-radius:7px;background:#fff8f0!important}
+  .print-columns{display:grid;grid-template-columns:1fr 1fr;gap:6px;align-items:start}
+  .print-group{border:0.6pt solid #d9dedb;border-radius:6px;padding:5px 6px;margin:0 0 5px;break-inside:avoid}
+  .print-group h2{font-size:9pt;line-height:1.1;margin:0 0 4px;padding:0 0 3px;border-bottom:.7pt solid #dce8df;color:#315746}
+  .print-group p{margin:0 0 3px;line-height:1.12}
+  .print-group p:last-child{margin-bottom:0}
+  .print-group small{font-size:6.7pt;color:#4e5651}
+  .print-group b{font-weight:700}
+  .emergency-print{background:#fff1f2!important;border-color:#e5bbc2}
+  .emergency-print h2{color:#92384a}
+  .emergency-print strong{font-size:9pt;color:#92384a}
+  .school{background:#f8f6ff!important}
+  .local{background:#f6fbf7!important}
+  .help-print{background:#fffaf0!important}
+  .print-foot{border-top:1pt solid #b9cfc0;margin-top:2px;padding-top:4px;font-size:6.7pt;line-height:1.2}
+  .print-foot span{display:block;margin-top:2px;color:#53645a}
+}
 </style>
 </head>
 <body>
@@ -37,6 +67,60 @@ h2{font-size:clamp(1.6rem,5vw,2.15rem);line-height:1.2;margin:0 0 10px;color:#35
 <div class="hero-note">🌼 A tu ritmo, sin apuro. Esta agenda es para vos.</div><div class="community-ribbon" aria-label="Comunidad"><span>🌷</span><span>🤝</span><span>🧉</span><span>🏡</span><span>💛</span><p>Un pueblo se hace más lindo cuando nos damos una mano.</p></div>
 </div>
 </header>
+
+<section class="print-sheet" aria-label="Agenda esencial de Solcito para imprimir">
+  <header class="print-head">
+    <div class="print-sun">☀</div><div><h1>Solcito <span>🌼</span></h1><p>Agenda vecinal esencial · San Patricio del Chañar</p></div>
+  </header>
+  <p class="print-welcome"><strong>Acá nadie tiene que demostrar que sabe, tener plata ni pedir permiso para pertenecer.</strong> Si necesitás ayuda, sos bienvenido. Si querés dar una mano, también. Y si hoy no podés aportar nada, seguís siendo parte de la comunidad. 💛</p>
+  <div class="print-columns">
+    <section class="print-group local"><h2>🏡 Contactos del pueblo</h2>
+      <p><b>Municipalidad:</b> 299 408 4225 <small>· Quili Malal 314</small></p>
+      <p><b>Mesa de entrada y turnos:</b> 299 420 2609</p>
+      <p><b>Recaudaciones:</b> 299 576 8856</p>
+      <p><b>Compras municipales:</b> 299 421 4821</p>
+      <p><b>Obras y servicios públicos:</b> 299 626 2687</p>
+      <p><b>Seguridad Ciudadana:</b> 299 458 4229</p>
+      <p><b>Denuncias municipales:</b> 299 631 8081</p>
+      <p><b>Zoonosis:</b> 299 631 3103</p>
+      <p><b>Hospital local:</b> 299 485 5084 <small>· confirmar si es contacto general</small></p>
+    </section>
+    <section class="print-group school"><h2>📚 Escuelas y formación</h2>
+      <p><b>Primaria 191 “Héroes de Malvinas”:</b> 299 485 5150 <small>· confirmar</small></p>
+      <p><b>Primaria 273 “Carlos Julio Sang”:</b> 299 485 5066 <small>· confirmar</small></p>
+      <p><b>Primaria 342:</b> 299 485 5307 <small>· confirmar</small></p>
+      <p><b>Primaria 364:</b> teléfono por confirmar</p>
+      <p><b>CPEM 31:</b> 299 485 5095 <small>· confirmar</small></p>
+      <p><b>EPET 26:</b> teléfono por confirmar</p>
+      <p><b>EPEA 3:</b> 299 523 9364 <small>· confirmar</small></p>
+      <p><b>CEPA 56:</b> 299 423 6835 <small>· confirmar</small></p>
+      <p><b>Jardines 41 y 67:</b> teléfonos por confirmar</p>
+      <p><b>Formación Agropecuaria 2:</b> teléfono por confirmar</p>
+      <p><b>Centro de Educación Física 10:</b> 299 485 5508 <small>· confirmar</small></p>
+    </section>
+    <section class="print-group emergency-print"><h2>❤️ Emergencias</h2>
+      <p><b>Emergencia médica · SIEN:</b> <strong>107</strong></p>
+      <p><b>Bomberos:</b> <strong>100</strong></p>
+      <p><b>Policía:</b> <strong>101</strong></p>
+      <p><b>Defensa Civil:</b> <strong>103</strong></p>
+      <p><b>Asistencia por violencia:</b> <strong>148</strong></p>
+      <p><b>Trata de personas:</b> <strong>145</strong></p>
+      <p><b>Maltrato infantil:</b> <strong>102</strong></p>
+      <p><b>Siniestros viales:</b> <strong>149</strong></p>
+    </section>
+    <section class="print-group help-print"><h2>🤝 Otros contactos útiles</h2>
+      <p><b>Vulneración de derechos:</b> 0800 333 0944 <small>· confirmar vigencia</small></p>
+      <p><b>Personas en situación de calle:</b> 0810 333 0944 <small>· confirmar vigencia</small></p>
+      <p><b>Defensa del Consumidor:</b> 0800 222 2667 <small>· confirmar vigencia</small></p>
+      <p><b>Registro Civil provincial:</b> 299 449 5422</p>
+      <p><b>Centro Cultural Erika Barión de Werro:</b> 299 485 5367 <small>· confirmar</small></p>
+      <p><b>Campus Educativo y Tecnológico:</b> 299 420 2107 <small>· confirmar</small></p>
+      <p><b>Polideportivo Municipal:</b> consultar en la Municipalidad.</p>
+    </section>
+  </div>
+  <footer class="print-foot"><b>🌷 Recordá:</b> los números pueden cambiar. Los teléfonos escolares y algunos contactos institucionales deben confirmarse antes de usarlos. Para urgencias, usá el número específico. <span>Solcito · agenda comunitaria sin ánimo de lucro · Ocarina Producciones</span><br><b>Colaboración voluntaria:</b> alias <strong>ocarina.guitarra</strong> · titular Elías. No hace falta donar para usar esta agenda.</footer>
+</section>
+
 <main class="wrap">
 <section class="intro">
 <h2>💌 Bienvenida, bienvenido</h2>
