@@ -269,6 +269,41 @@ footer{background:linear-gradient(140deg,#e7f5e9,#f8f2ff 65%,#fff0e6);border-top
 @media(max-width:520px){.doodle-garden{gap:5px;padding:10px 7px;border-radius:18px;margin:14px 0}.doodle-garden .doodle-art{width:clamp(34px,11vw,52px);flex-basis:34px}.doodle-garden .garden-caption{font-size:.74rem;max-width:95px}.doodle-garden .garden-caption small{font-size:.68rem}.welcome-community:after{font-size:.8rem;right:8px}.intro:after{font-size:1rem;letter-spacing:.12em}}
 @media(prefers-reduced-motion:reduce){.doodle-garden .doodle-art{animation:none!important}}
 @media print{.doodle-garden,.intro:after,.emergency:after,.welcome-community:after{display:none!important}}
+
+/* SOLCITO · refuerzo visual: dibujos grandes y visibles en toda pantalla */
+.doodle-garden{
+  display:flex!important;align-items:center;justify-content:space-evenly;flex-wrap:wrap;
+  gap:clamp(10px,2.2vw,24px);padding:clamp(15px,2.5vw,25px);
+  margin:clamp(18px,3vw,30px) 0;border:2px solid #ead4b7;border-radius:28px;
+  background:radial-gradient(circle at 12% 15%,#fff 0 8%,transparent 8.5%),
+    linear-gradient(135deg,#fff6d9 0%,#fff0f5 48%,#e9f8ee 100%);
+  box-shadow:0 7px 0 #f0e4d8,0 12px 28px #6b56421a;overflow:visible;
+}
+.doodle-garden .doodle-art{
+  display:block!important;visibility:visible!important;opacity:1!important;
+  width:clamp(58px,9vw,100px);height:auto;flex:0 1 100px;max-width:100px;
+  filter:drop-shadow(0 5px 2px #68534220);animation:solcito-float 4.8s ease-in-out infinite;
+}
+.doodle-garden .garden-caption{
+  display:block;flex:1 1 145px;max-width:205px;min-width:120px;
+  padding:10px 12px;border:1px dashed #dfb0bd;border-radius:17px;
+  background:#ffffffd9;color:#674b5b;font-size:.92rem;line-height:1.45;text-align:center;font-weight:800;
+}
+.doodle-garden .garden-caption small{display:block;margin-top:5px;color:#4f6958;font-weight:600;font-size:.8rem}
+.sunny-scene{min-height:120px;padding:10px 15px;border:2px solid #ffffffd9;box-shadow:0 5px 0 #d9c9d3,0 10px 25px #66534412}
+.sunny-scene svg{width:min(62%,500px)!important;max-height:150px!important;min-height:95px}
+.sunny-scene p{font-size:1rem!important}
+@media(max-width:520px){
+ .doodle-garden{gap:8px;padding:13px 9px;margin:17px 0;border-radius:21px}
+ .doodle-garden .doodle-art{width:clamp(48px,14vw,68px);flex:0 1 68px;max-width:68px}
+ .doodle-garden .garden-caption{flex:1 1 100%;max-width:none;min-width:0;padding:9px;font-size:.85rem}
+ .sunny-scene{min-height:92px;padding:7px 8px}
+ .sunny-scene svg{width:58%!important;min-height:72px;max-height:110px!important}
+ .sunny-scene p{font-size:.78rem!important}
+}
+@media(prefers-reduced-motion:reduce){.doodle-garden .doodle-art{animation:none!important}}
+@media print{.doodle-garden{display:none!important}}
+
 </style>
 </head>
 <body>
