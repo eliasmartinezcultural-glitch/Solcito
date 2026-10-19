@@ -769,7 +769,7 @@ footer .tiny{line-height:1.5}
    }catch(e){copyButton.textContent='Alias: ocarina.guitarra';}
   });
  }
- if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20261019-2',{updateViaCache:'none'}).catch(()=>{}));}
 })();
 </script>
 </body>
