@@ -603,9 +603,177 @@ footer .tiny{line-height:1.5}
   .solcito-goodbye{break-inside:avoid;box-shadow:none}
 }
 
+
+/* SOLCITO · capa integral de cuidado, lectura y navegación */
+@media screen{
+  :root{--ink:#35423e;--muted:#5c6b64;--cream:#fffaf2;--green:#2f6853;--line:#e6dfd5}
+  html{scroll-behavior:smooth;scroll-padding-top:18px}
+  body{font-size:18px;line-height:1.62;color:#35423e;background:#fffaf2}
+  .skip-link{position:absolute;top:8px;left:8px;z-index:10000;transform:translateY(-160%);padding:10px 14px;border-radius:12px;background:#244f3d;color:#fff;font-weight:800}
+  .skip-link:focus{transform:translateY(0)}
+  .wrap{width:min(100% - 30px,1080px)}
+  .hero{padding:clamp(20px,4vw,38px) 0 28px;background:linear-gradient(145deg,#fff0bc 0%,#ffe8ed 48%,#e5f5e9 100%);border-bottom:4px solid #edd49b}
+  .brand{gap:13px}
+  .sun{box-shadow:0 4px 0 #e9b65c}
+  h1{letter-spacing:-.045em}
+  .subtitle{line-height:1.25}
+  .welcome{max-width:760px;font-size:clamp(1.03rem,2.2vw,1.15rem);line-height:1.65;margin:22px 0 10px}
+  .belonging{background:#fffdf8e8;border:2px solid #e5c5ce;box-shadow:0 4px 0 #f0dfe2}
+  .hero-note{border:1px solid #e4c4cf;background:#fffdf0;font-size:.92rem}
+  .community-ribbon{gap:8px 10px}
+  .solcito-nav{position:relative;z-index:5;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 15px;background:#fffdf8;border-bottom:1px solid #eee3d7;box-shadow:0 3px 12px #57483b0c}
+  .solcito-nav a{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:8px 13px;border:1px solid #e5ddd3;border-radius:999px;background:#fff;color:#315c49;text-decoration:none;font-size:.9rem;font-weight:800;transition:background .16s ease,transform .16s ease}
+  .solcito-nav a:hover{background:#edf7ef;transform:translateY(-1px)}
+  main.wrap{padding-top:24px;padding-bottom:48px}
+  .intro{padding:clamp(17px,3vw,25px);border:1px solid #e8dece;border-radius:24px;background:linear-gradient(135deg,#fff 0%,#fffdf7 72%,#f4fbf4 100%);box-shadow:0 4px 0 #eee5d9}
+  .intro h2{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:9px}
+  .intro p{max-width:850px;line-height:1.58}
+  .actions{gap:9px}
+  .btn{min-height:48px;padding:11px 15px;border-radius:14px;transition:transform .16s ease,box-shadow .16s ease}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 3px 0 #244b3b30}
+  .btn.secondary{background:#fff}
+  .emergency{border-radius:22px;box-shadow:0 4px 0 #f3dfe2}
+  .emergency h2{font-size:clamp(1.45rem,3.5vw,1.9rem)}
+  .emergency-link{min-height:88px;display:flex;flex-direction:column;justify-content:center;gap:3px;transition:transform .16s ease,border-color .16s ease;box-shadow:0 2px 0 #e9ded8}
+  .emergency-link:hover{transform:translateY(-2px);border-color:#d9aab7}
+  .emergency-link b{font-size:clamp(1.8rem,4vw,2.25rem)}
+  .welcome-community{margin:24px 0;padding:clamp(17px,3vw,25px);border-radius:24px;box-shadow:0 4px 0 #e7d9e6}
+  .welcome-community-heading h2{font-size:clamp(1.5rem,3.8vw,2rem)}
+  .welcome-paths{gap:10px}
+  .welcome-path{border:1px solid #e4d9e9;border-radius:16px;background:#ffffffd9;min-height:82px;padding:13px 15px;transition:transform .16s ease,box-shadow .16s ease}
+  .welcome-path:hover{transform:translateY(-2px);box-shadow:0 4px 0 #dfd5e0}
+  .welcome-path strong{font-size:1rem}
+  .welcome-path small{font-size:.86rem;line-height:1.42}
+  .welcome-promise{border:1px solid #eee0d4;line-height:1.5}
+  .toolbar{margin:24px 0 18px;padding:clamp(14px,2.5vw,21px);border-radius:21px;background:linear-gradient(140deg,#fff,#f3faf5);box-shadow:0 4px 0 #e0ebe1}
+  .search{min-height:52px;border-radius:14px;background:#fff}
+  .filters{gap:8px}
+  .filter{min-height:40px;padding:8px 13px;transition:background .15s ease,border-color .15s ease}
+  .section-title{margin:29px 0 13px;align-items:center}
+  .section-title .doodle{border:1px solid #f0dfb2;box-shadow:0 2px 0 #e9dec9}
+  .section-title h2{font-size:clamp(1.35rem,3.2vw,1.85rem)}
+  .section-intro,.section-title .muted{line-height:1.5}
+  .cards{gap:14px}
+  .card{border-radius:19px;padding:17px;box-shadow:0 3px 0 #ece4dc;transition:transform .16s ease,box-shadow .16s ease}
+  .card:hover{transform:translateY(-1px);box-shadow:0 5px 0 #e8e0d7}
+  .cardhead{align-items:flex-start}
+  .card h3{line-height:1.3}
+  .symbol{box-shadow:0 2px 0 #eadcc7}
+  .category{letter-spacing:.045em}
+  .phone{font-variant-numeric:tabular-nums;line-height:1.2}
+  .copy-phone{margin-top:5px;border:1px solid #bad7c5;border-radius:9px;background:#f4fbf5;color:#285b43;padding:6px 10px;font-size:.8rem;font-weight:800;cursor:pointer}
+  .copy-phone:hover{background:#e4f4e8}
+  .source{line-height:1.5}
+  .note{border-left-width:5px;border-radius:14px;line-height:1.55}
+  .empty{padding:24px;border-radius:20px}
+  .doodle-garden{margin:22px auto;gap:14px}
+  .garden-caption{line-height:1.4}
+  .solcito-goodbye{margin-top:12px;margin-bottom:28px;border-radius:23px;box-shadow:0 4px 0 #e7e5d8}
+  .solcito-goodbye h2{font-size:clamp(1.45rem,3.4vw,1.9rem)}
+  .solcito-goodbye p{line-height:1.6}
+  footer{padding:28px 0 34px;line-height:1.6}
+  footer .wrap{max-width:900px}
+  footer p{margin:9px 0}
+  footer .tiny{font-size:.82rem;line-height:1.55}
+  .donate-float{
+    right:14px!important;bottom:14px!important;width:246px!important;max-width:calc(100vw - 28px)!important;
+    padding:13px!important;border-radius:17px!important;gap:6px 9px!important;
+    box-shadow:0 8px 28px #51443b30,0 0 0 3px #ffffffc4!important;
+  }
+  .donate-float-copy strong{font-size:.91rem!important;line-height:1.28!important}
+  .donate-float-copy span{font-size:.74rem!important;line-height:1.38!important}
+  .donate-float-copy .donate-alias{padding:7px 8px!important}
+  .donate-alias b{font-size:.78rem!important}
+  .copy-alias{min-height:35px!important;padding:7px 11px!important;font-size:.74rem!important}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #8055a7;outline-offset:3px}
+}
+@media screen and (max-width:690px){
+  body{font-size:17px;line-height:1.58}
+  .wrap{width:calc(100% - 24px)}
+  .hero{padding:20px 0 23px}
+  .sun{width:61px;height:61px;font-size:35px;border-width:3px}
+  h1{font-size:clamp(2.8rem,14vw,4.2rem)}
+  .subtitle{font-size:1.03rem}
+  .welcome{margin-top:17px;font-size:.99rem;line-height:1.58}
+  .belonging{padding:13px 12px;gap:10px}
+  .belonging-flower{font-size:2rem}
+  .belonging-butterfly{display:none}
+  .hero-note{font-size:.83rem;padding:8px 11px}
+  .community-ribbon{gap:7px;margin-top:12px}
+  .community-ribbon span{width:32px;height:32px;font-size:18px}
+  .community-ribbon p{font-size:.9rem;line-height:1.35}
+  .solcito-nav{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding:9px 12px;scrollbar-width:thin}
+  .solcito-nav a{flex:0 0 auto;min-height:38px;padding:7px 11px;font-size:.82rem}
+  main.wrap{padding-top:15px;padding-bottom:165px}
+  .intro{padding:15px;border-radius:19px}
+  .intro h2{font-size:1.45rem}
+  .actions .btn{flex:1 1 100%;justify-content:center}
+  .emergency{padding:14px;margin:15px 0;border-radius:19px}
+  .emergency-grid{gap:8px}
+  .emergency-link{min-height:76px;padding:10px;border-radius:13px}
+  .emergency-link span{font-size:.88rem;line-height:1.3}
+  .welcome-community{padding:14px;margin:17px 0;border-radius:19px}
+  .welcome-community-heading{gap:9px}
+  .welcome-flower{font-size:2rem}
+  .welcome-community-heading h2{font-size:1.38rem}
+  .welcome-community-heading p{font-size:.91rem;line-height:1.45}
+  .welcome-paths{gap:8px}
+  .welcome-path{padding:10px;min-height:72px;gap:8px}
+  .path-icon{width:38px;height:38px;font-size:1.4rem}
+  .welcome-path strong{font-size:.91rem}
+  .welcome-path small{font-size:.78rem;line-height:1.35}
+  .path-arrow{font-size:1.1rem}
+  .toolbar{margin:16px 0 13px;padding:12px;border-radius:17px}
+  .search{font-size:16px;padding:12px}
+  .filters{gap:7px}
+  .filter{min-height:38px;padding:7px 10px;font-size:.82rem}
+  .section-title{margin:22px 0 10px;gap:9px;align-items:flex-start}
+  .section-title .doodle{font-size:1.55rem;padding:5px 8px;border-radius:12px}
+  .section-title h2{font-size:1.25rem}
+  .section-title .muted{font-size:.88rem}
+  .cards{gap:10px}
+  .card{padding:13px;border-radius:16px}
+  .cardhead{gap:9px}
+  .symbol{width:42px;height:42px;font-size:23px;border-radius:13px}
+  .card h3{font-size:1.05rem}
+  .phone{font-size:clamp(1.7rem,7vw,2.15rem)!important;overflow-wrap:anywhere}
+  .detail{font-size:.92rem;line-height:1.52}
+  .source{font-size:.78rem;line-height:1.5}
+  .note{padding:12px;font-size:.9rem;line-height:1.5}
+  .solcito-goodbye{gap:10px;padding:14px 12px;margin-bottom:20px;border-radius:18px}
+  .goodbye-flower{width:39px;height:39px;font-size:22px;border-radius:12px}
+  .solcito-goodbye h2{font-size:1.28rem}
+  .solcito-goodbye p{font-size:.9rem}
+  footer{padding:22px 0 155px}
+  footer .tiny{font-size:.76rem}
+  .donate-float{
+    right:8px!important;bottom:8px!important;width:202px!important;max-width:calc(100vw - 16px)!important;
+    grid-template-columns:23px minmax(0,1fr)!important;gap:4px 7px!important;padding:10px!important;border-radius:15px!important;
+  }
+  .donate-float-flower{font-size:21px!important}
+  .donate-float-copy{gap:3px!important}
+  .donate-float-copy strong{font-size:.81rem!important}
+  .donate-float-copy span{font-size:.68rem!important;line-height:1.28!important}
+  .donate-float-copy .donate-alias{padding:5px 6px!important}
+  .donate-alias b{font-size:.72rem!important}
+  .copy-alias{min-height:31px!important;padding:5px 8px!important;font-size:.68rem!important}
+}
+@media screen and (max-width:370px){
+  .donate-float{width:184px!important;right:6px!important;bottom:6px!important;padding:8px!important}
+  .donate-float-copy strong{font-size:.76rem!important}
+  .donate-float-copy span{font-size:.63rem!important}
+  .copy-alias{font-size:.65rem!important}
+  .welcome-path small{font-size:.73rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 <header class="hero">
 <div class="wrap">
 <div class="topline">
@@ -614,7 +782,7 @@ footer .tiny{line-height:1.5}
 </div>
 <p class="welcome"><strong>¡Bienvenida, bienvenido! 💛</strong><br>Qué bueno que llegaste. Solcito reúne teléfonos útiles y contactos de San Patricio del Chañar para que encontrar una mano sea un poquito más fácil. Buscá con calma, anotá lo que necesites y compartí la agenda con quien pueda servirle. <strong>Este espacio también es tuyo.</strong></p><div class="belonging" role="note"><span class="belonging-flower" aria-hidden="true">🌼</span><div><strong>Entrá como estés. No hay apuro ni nada que tengas que demostrar.</strong><p>Podés buscar un número, recorrer la agenda o volver cuando lo necesites. Solcito es gratis y no te pide una cuenta.</p></div><span class="belonging-butterfly" aria-hidden="true">🦋</span></div>
 
-<div class="hero-note">🌼 A tu ritmo, sin apuro. Esta agenda es para vos.</div><div class="community-ribbon" aria-label="Comunidad"><span>🌷</span><span>🤝</span><span>🧉</span><span>🏡</span><span>💛</span><p>Un pueblo se hace más lindo cuando nos damos una mano.</p></div>
+<div class="hero-note">🌼 Buscá, consultá, compartí. Solcito es de la comunidad.</div><div class="community-ribbon" aria-label="Comunidad"><span>🌷</span><span>🤝</span><span>🧉</span><span>🏡</span><span>💛</span><p>Un pueblo se hace más lindo cuando nos damos una mano.</p></div>
 <div class="sunny-scene">
   <svg viewBox="0 0 620 150" role="img" aria-labelledby="scene-title scene-desc" xmlns="http://www.w3.org/2000/svg">
     <title id="scene-title">Un pueblo que se acompaña</title>
@@ -715,17 +883,17 @@ footer .tiny{line-height:1.5}
   <footer class="print-foot"><b>🌷 Recordá:</b> los números pueden cambiar. Los teléfonos escolares y algunos contactos institucionales deben confirmarse antes de usarlos. Para urgencias, usá el número específico. <span>Solcito · agenda comunitaria sin ánimo de lucro · Ocarina Producciones</span><br><b>Colaboración voluntaria para mantener y mejorar Solcito:</b> alias <strong>ocarina.guitarra</strong> · titular <strong>Elías Martínez</strong>. No hace falta donar para usar esta agenda.</footer>
 </section>
 
-<main class="wrap">
+<main class="wrap" id="contenido-principal">
 <section class="intro">
-<h2>💌 Bienvenida, bienvenido</h2>
-<p>Buscá el tema que necesitás. Los números están <strong>bien grandes</strong> para leerlos, llamar o anotarlos en tu cuaderno.</p>
-<p>Podés buscar por palabra, imprimir la agenda o compartirla por WhatsApp. Y si necesitás ayuda para encontrar algo, está bien pedir una mano.</p><p class="offline-note">📶 <strong>También sin Wi-Fi:</strong> abrí Solcito una vez con internet en este dispositivo. Después podrá abrirse sin conexión. Para llamar, sí necesitás señal telefónica.</p><p class="copy-status" id="estadoCopiado" aria-live="polite"></p>
+<h2>🌼 Encontrá lo que necesitás</h2>
+<p>Empezá por las urgencias o buscá un contacto del pueblo. Los teléfonos están destacados para que puedas leerlos, llamar o anotarlos sin apuro.</p>
+<p>Si no aparece lo que buscás, probá con otra palabra. También podés imprimir la agenda o compartirla con alguien a quien le pueda servir.</p><p class="offline-note">📶 <strong>También sin Wi-Fi:</strong> abrí Solcito una vez con internet en este dispositivo. Después podrá abrirse sin conexión. Para llamar, sí necesitás señal telefónica.</p><p class="copy-status" id="estadoCopiado" aria-live="polite"></p>
 <div class="actions"><button class="btn" onclick="window.print()" type="button">🖨️ Imprimir la agenda</button><button class="btn secondary" type="button" onclick="document.getElementById('busqueda').focus()">🔎 Buscar un teléfono</button><a class="btn whatsapp-btn" href="https://wa.me/?text=%E2%98%80%EF%B8%8F%20SOLCITO%20%7C%20Agenda%20comunitaria%20de%20San%20Patricio%20del%20Cha%C3%B1ar%0A%0ATel%C3%A9fonos%20%C3%BAtiles%2C%20emergencias%20y%20contactos%20locales%20en%20un%20solo%20lugar.%20Es%20gratuita%20y%20est%C3%A1%20abierta%20para%20toda%20la%20comunidad.%0A%0AConsultala%20y%20compartila%20con%20quien%20pueda%20necesitarla%3A%0Ahttps%3A%2F%2Feliasmartinezcultural-glitch.github.io%2FSolcito%2F%0A%0AUna%20mano%20amiga%2C%20cerquita%20tuyo.%20%F0%9F%92%9B%0AOcarina%20Producciones" target="_blank" rel="noopener noreferrer" aria-label="Compartir Solcito por WhatsApp con un mensaje preparado">💚 Compartir Solcito por WhatsApp</a></div>
 </section>
 
 <section class="emergency" aria-labelledby="urgencias">
 <h2 id="urgencias">❤️ Si necesitás ayuda urgente</h2>
-<p>Estos números figuran en información oficial de la Provincia del Neuquén. Usalos para la situación indicada. Si podés, pedile ayuda a una persona cercana.</p>
+<p>Elegí el número que corresponda a la situación. Si estás en peligro o no sabés qué hacer, buscá también a una persona cercana que pueda acompañarte.</p>
 <div class="emergency-grid">
 <a class="emergency-link" href="tel:107"><span>🚑 Emergencia médica · SIEN</span><b>107</b></a>
 <a class="emergency-link" href="tel:100"><span>🚒 Bomberos</span><b>100</b></a>
@@ -765,7 +933,7 @@ footer .tiny{line-height:1.5}
 
 <section class="toolbar" aria-label="Buscar contactos">
 <label class="searchlabel" for="busqueda">🔎 ¿Qué número estás buscando?</label>
-<input class="search" id="busqueda" type="search" placeholder="Por ejemplo: hospital, agua, turnos..." autocomplete="off">
+<input class="search" id="busqueda" type="search" placeholder="Probá: hospital, agua, turnos..." autocomplete="off">
 <div class="filters" aria-label="Filtrar por tema">
 <button class="filter" type="button" data-filter="Todos" aria-pressed="true">🌈 Todos</button>
 <button class="filter" type="button" data-filter="Municipalidad" aria-pressed="false">🏛️ Municipalidad</button>
@@ -825,7 +993,7 @@ footer .tiny{line-height:1.5}
 <article class="card contact-card" data-category="Ayuda" data-search="gobierno justicia orientación trámites provincia neuquen"><div class="cardhead"><div class="symbol">⚖️</div><h3>Gobierno y Justicia provincial</h3></div><p class="category">Provincia · orientación institucional</p><p class="phone">299 449 3910</p><p class="detail">Contacto de la Subsecretaría de Gobierno y Justicia provincial. Consultá si pueden orientarte sobre tu trámite.</p><p class="source">Fuente: <a href="https://ministeriodegobierno.neuquen.gob.ar/subsecretaria-de-gobierno-y-justicia/" target="_blank" rel="noopener noreferrer">Ministerio de Gobierno de Neuquén</a>.</p></article>
 <article class="card contact-card" data-category="Seguridad" data-search="ministerio seguridad neuquen contacto administración"><div class="cardhead"><div class="symbol">🔐</div><h3>Ministerio de Seguridad provincial</h3></div><p class="category">Provincia · contacto institucional</p><p class="phone">299 449 5100</p><p class="detail">Contacto institucional del Ministerio de Seguridad. No reemplaza el 101 en una emergencia policial.</p><p class="source">Fuente: <a href="https://seguridad.neuquen.gob.ar/direccion-provincial-de-seguridad/" target="_blank" rel="noopener noreferrer">Ministerio de Seguridad de Neuquén</a>.</p></article>
 <article class="card contact-card" data-category="Salud" data-search="ministerio salud neuquen central información sanitaria"><div class="cardhead"><div class="symbol">🌿</div><h3>Ministerio de Salud provincial</h3></div><p class="category">Provincia · contacto institucional</p><p class="phone">299 449 5590 / 91</p><p class="detail">Contacto institucional publicado por el Ministerio de Salud en Neuquén capital. No es una línea de urgencias.</p><p class="source">Fuente: <a href="https://salud.neuquen.gob.ar/red-de-salud/" target="_blank" rel="noopener noreferrer">Ministerio de Salud de Neuquén</a>.</p></article></div>
-<div class="empty" id="sinResultados"><h3>🌼 Todavía no encontramos ese contacto</h3><p>Probá con una palabra más cortita o tocá “Todos” para volver a ver la agenda completa.</p></div>
+<div class="empty" id="sinResultados"><h3>🌼 Todavía no aparece ese contacto</h3><p>No pasa nada. Probá con otra palabra o elegí “Todos” para volver a ver la agenda completa.</p></div>
 
 <aside class="note"><b>🌷 Un pequeño cuidado:</b> los teléfonos pueden cambiar. Los contactos provinciales no necesariamente atienden en San Patricio del Chañar. Si un número no responde, consultá la página oficial de la institución. Para una urgencia, no uses teléfonos administrativos.</aside>
 
@@ -854,12 +1022,12 @@ footer .tiny{line-height:1.5}
   <span class="donate-float-flower" aria-hidden="true">🌼</span>
   <div class="donate-float-copy">
     <strong>¿Nos ayudás a cuidar Solcito?</strong>
-    <span>Si te nace, podés colaborar. Usarla es siempre gratis 💛</span>
+    <span>Si te nace, podés ayudar a mantenerla. Es totalmente opcional; Solcito sigue siendo gratis. 💛</span>
     <span class="donate-alias">Alias <b>ocarina.guitarra</b> · Elías Martínez</span>
   </div>
   <button class="copy-alias" type="button" aria-label="Copiar alias ocarina.guitarra">Copiar alias</button>
 </aside>
-<footer><div class="wrap"><p><strong>☀️ Solcito — Una mano amiga, cerquita tuyo</strong></p><p>Una iniciativa comunitaria sin ánimo de lucro de Ocarina Producciones, creada por Elías Martínez para acercar información útil a vecinos, familias y comunidades rurales de San Patricio del Chañar.</p><p class="tiny">Los datos se recopilan de fuentes municipales, provinciales y registros públicos educativos consultados el 19 de octubre de 2026. Algunos teléfonos escolares provienen de directorios públicos y están marcados para confirmar: Solcito no los presenta como verificados en tiempo real. La publicación no implica respaldo institucional. Si encontrás un dato que cambió, confirmalo con la institución.</p><p class="tiny">Creado con cariño por Elías Martínez · Ocarina Producciones. 🌼 Sin cuentas, sin instalación y sin pedir datos personales.</p></div></footer>
+<footer><div class="wrap"><p><strong>☀️ Solcito — Una mano amiga, cerquita tuyo</strong></p><p>Una agenda comunitaria gratuita creada por Elías Martínez · Ocarina Producciones para acercar información útil a San Patricio del Chañar y sus comunidades cercanas.</p><p class="tiny">Los datos se recopilan de fuentes municipales, provinciales y registros públicos educativos consultados el 19 de octubre de 2026. Algunos teléfonos escolares provienen de directorios públicos y están marcados para confirmar: Solcito no los presenta como verificados en tiempo real. La publicación no implica respaldo institucional. Si encontrás un dato que cambió, confirmalo con la institución.</p><p class="tiny">Creado con cariño por Elías Martínez · Ocarina Producciones. 🌼 Sin cuentas, sin instalación y sin pedir datos personales.</p></div></footer>
 <script>
 (function(){
  const search=document.getElementById('busqueda');
@@ -919,7 +1087,7 @@ footer .tiny{line-height:1.5}
    }catch(e){copyButton.textContent='Alias: ocarina.guitarra';}
   });
  });
- if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20261019-5',{updateViaCache:'none'}).catch(()=>{}));}
+ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20261019-6',{updateViaCache:'none'}).catch(()=>{}));}
 })();
 </script>
 </body>
