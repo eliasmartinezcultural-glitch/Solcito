@@ -458,6 +458,25 @@ footer .tiny{line-height:1.5}
 @media print{.donate-float{position:static!important;width:auto!important;box-shadow:none!important;margin:8px 0!important}main.wrap{padding-bottom:0!important}.copy-phone,.copy-alias,.copy-status{display:none!important}.print-sheet{height:auto;min-height:0;overflow:visible}}
 
 
+/* Invitación inicial a colaborar: cálida, clara y siempre voluntaria */
+.welcome-gift{display:grid;grid-template-columns:42px minmax(0,1fr) auto;align-items:center;gap:10px 13px;margin:14px 0 10px;padding:13px 15px;border:2px solid #e6bdc8;border-radius:20px;background:linear-gradient(115deg,#fff8df 0%,#ffedf2 54%,#f0eaff 100%);box-shadow:0 4px 0 #e9d9df}
+.welcome-gift-flower{display:grid;place-items:center;width:42px;height:42px;border-radius:15px;background:#fff;border:1px solid #f1d5a0;font-size:1.8rem}
+.welcome-gift-copy{min-width:0}
+.welcome-gift-kicker{margin:0 0 3px;font-size:.68rem;font-weight:900;letter-spacing:.09em;color:#81566f}
+.welcome-gift h2{margin:0 0 4px;font-size:clamp(1.08rem,2.5vw,1.32rem);line-height:1.2;color:#315f4c}
+.welcome-gift-copy>p:not(.welcome-gift-kicker){margin:0;font-size:.9rem;line-height:1.38}
+.welcome-gift-alias{margin-top:6px!important;color:#5b5360;font-size:.84rem!important;overflow-wrap:anywhere}
+.welcome-gift-alias strong{color:#315f4c}
+.welcome-gift-button{grid-column:3;grid-row:1;white-space:nowrap}
+@media(max-width:690px){
+ .welcome-gift{grid-template-columns:32px minmax(0,1fr);gap:7px 9px;margin:11px 0 8px;padding:10px;border-radius:16px}
+ .welcome-gift-flower{width:32px;height:32px;font-size:1.35rem;border-radius:11px;align-self:start}
+ .welcome-gift h2{font-size:1.04rem}
+ .welcome-gift-copy>p:not(.welcome-gift-kicker){font-size:.83rem}
+ .welcome-gift-alias{font-size:.78rem!important}
+ .welcome-gift-button{grid-column:2;grid-row:auto;justify-self:start;padding:7px 10px;font-size:.76rem}
+}
+
 /* Ajuste solicitado: menos etiquetas repetidas y teléfonos locales más legibles */
 @media screen{
   #contactos-locales .phone,
@@ -488,6 +507,16 @@ footer .tiny{line-height:1.5}
 <div class="sticker" aria-hidden="true">🌷🦋</div>
 </div>
 <p class="welcome"><strong>¡Hola! Qué alegría que estés acá. 💛</strong><br>Esta agenda reúne teléfonos útiles de San Patricio del Chañar para que encuentres una mano cuando la necesites. Podés consultarla a tu ritmo, guardar los números en tu cuaderno o pedirle a alguien que te ayude. <strong>Acá hay lugar para vos.</strong></p><div class="belonging" role="note"><span class="belonging-flower" aria-hidden="true">🌼</span><div><strong>No tenés que saber usar el celular ni demostrar nada para estar acá.</strong><p>Venís a buscar ayuda, compartir información o simplemente mirar: sos parte de esta comunidad.</p></div><span class="belonging-butterfly" aria-hidden="true">🦋</span></div>
+<section class="welcome-gift" aria-label="Invitación amable a colaborar con Solcito">
+  <span class="welcome-gift-flower" aria-hidden="true">💛</span>
+  <div class="welcome-gift-copy">
+    <p class="welcome-gift-kicker">UN GESTO QUE ACOMPAÑA</p>
+    <h2>¿Te gustaría ayudar a que Solcito siga creciendo?</h2>
+    <p>Esta agenda está hecha con cariño para el pueblo y es <strong>siempre gratuita</strong>. Si alguna vez te resulta útil y te nace colaborar, cada pequeño gesto ayuda a cuidarla y mejorarla. <strong>Sin compromiso, de corazón. 🌼</strong></p>
+    <p class="welcome-gift-alias">Alias de colaboración: <strong>ocarina.guitarra</strong> · Elías Martínez</p>
+  </div>
+  <button class="copy-alias welcome-gift-button" type="button" aria-label="Copiar alias ocarina.guitarra">Copiar alias</button>
+</section>
 <div class="hero-note">🌼 A tu ritmo, sin apuro. Esta agenda es para vos.</div><div class="community-ribbon" aria-label="Comunidad"><span>🌷</span><span>🤝</span><span>🧉</span><span>🏡</span><span>💛</span><p>Un pueblo se hace más lindo cuando nos damos una mano.</p></div>
 <div class="sunny-scene">
   <svg viewBox="0 0 620 150" role="img" aria-labelledby="scene-title scene-desc" xmlns="http://www.w3.org/2000/svg">
@@ -770,8 +799,7 @@ footer .tiny{line-height:1.5}
    });
    phone.appendChild(button);
   });
- const copyButton=document.querySelector('.copy-alias');
- if(copyButton){
+ document.querySelectorAll('.copy-alias').forEach(copyButton=>{
   copyButton.addEventListener('click',async()=>{
    const alias='ocarina.guitarra';
    try{
@@ -783,7 +811,7 @@ footer .tiny{line-height:1.5}
     copyButton.textContent='¡Alias copiado!';
    }catch(e){copyButton.textContent='Alias: ocarina.guitarra';}
   });
- }
+ });
  if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20261019-3',{updateViaCache:'none'}).catch(()=>{}));}
 })();
 </script>
