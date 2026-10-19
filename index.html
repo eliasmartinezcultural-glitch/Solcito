@@ -399,6 +399,33 @@ footer .tiny{line-height:1.5}
 @media(max-width:520px){.actions .whatsapp-btn{width:100%;min-height:54px}}
 @media(prefers-reduced-motion:reduce){.whatsapp-btn{transition:none!important}}
 
+
+/* SOLCITO · compacta, accesible y lista para conexión intermitente */
+@media screen{
+ body{font-size:16px;line-height:1.42}.hero{padding:14px 0 16px}main{padding-top:12px;padding-bottom:104px}
+ .intro{padding:13px}.intro p{margin:6px 0}.emergency{margin:12px 0 15px;padding:13px}
+ .emergency-grid{gap:7px;margin-top:8px}.emergency-link{padding:8px 10px;min-height:66px}
+ .toolbar{margin:12px 0 10px;padding:11px}.section-title{margin:16px 0 8px}
+ .cards{gap:8px}.card{padding:11px;border-radius:15px}.cardhead{margin-bottom:4px}.symbol{width:39px;height:39px;font-size:22px}
+ .phone{display:flex;align-items:center;flex-wrap:wrap;gap:7px;font-size:clamp(1.65rem,4.7vw,2rem);line-height:1.2;margin:5px 0 7px}
+ .copy-phone{border:1px solid #9bb9a7;border-radius:8px;background:#f1faf4;color:#28563f;padding:5px 8px;font-size:.76rem;font-weight:800;line-height:1.2;cursor:pointer}
+ .copy-phone:focus-visible{outline:3px solid #8557b5;outline-offset:2px}
+ .copy-status{font-size:.82rem;font-weight:700;color:#28563f;min-height:1.1em;margin:2px 0}
+ .donate-float{width:190px;padding:8px 9px;grid-template-columns:22px 1fr;gap:4px 6px;border-radius:14px}
+ .donate-float-flower{font-size:20px}.donate-float-copy{gap:2px}.donate-float-copy strong{font-size:.8rem}
+ .donate-float-copy>span:not(.donate-alias):not(.donate-holder){display:none}
+ .donate-float-copy .donate-alias b{font-size:.78rem}.donate-holder{font-size:.68rem!important}
+ .copy-alias{padding:5px 7px;font-size:.72rem}
+ .offline-note{font-size:.82rem;line-height:1.3;background:#eef8f0;border-left:4px solid #5b9a75;padding:7px 9px;border-radius:8px;margin:8px 0}
+}
+@media(max-width:690px){
+ .donate-float{left:7px;right:7px;bottom:6px;width:auto;grid-template-columns:22px 1fr auto;gap:3px 6px;padding:6px 8px}
+ .donate-float-copy strong{font-size:.76rem}.donate-float-copy .donate-alias b{font-size:.73rem}.donate-holder{font-size:.64rem!important}
+ .copy-alias{grid-column:3;grid-row:1/4;align-self:center;padding:7px;font-size:.7rem}
+ .phone{font-size:clamp(1.7rem,7vw,2rem)}.actions .btn{flex:1 1 100%}
+}
+@media print{.copy-phone,.copy-alias,.copy-status{display:none!important}.print-sheet{height:auto;min-height:0;overflow:visible}}
+
 </style>
 </head>
 <body>
@@ -514,7 +541,7 @@ footer .tiny{line-height:1.5}
 <section class="intro">
 <h2>💌 Bienvenida, bienvenido</h2>
 <p>Buscá el tema que necesitás. Los números están <strong>bien grandes</strong> para leerlos, llamar o anotarlos en tu cuaderno.</p>
-<p>Podés buscar por palabra, imprimir la agenda o compartirla por WhatsApp. Y si necesitás ayuda para encontrar algo, está bien pedir una mano.</p>
+<p>Podés buscar por palabra, imprimir la agenda o compartirla por WhatsApp. Y si necesitás ayuda para encontrar algo, está bien pedir una mano.</p><p class="offline-note">📶 <strong>También sin Wi-Fi:</strong> abrí Solcito una vez con internet en este dispositivo. Después podrá abrirse sin conexión. Para llamar, sí necesitás señal telefónica.</p><p class="copy-status" id="estadoCopiado" aria-live="polite"></p>
 <div class="actions"><button class="btn" onclick="window.print()" type="button">🖨️ Imprimir la agenda</button><button class="btn secondary" type="button" onclick="document.getElementById('busqueda').focus()">🔎 Buscar un teléfono</button><a class="btn whatsapp-btn" href="https://wa.me/?text=%E2%98%80%EF%B8%8F%20SOLCITO%20%7C%20Agenda%20comunitaria%20de%20San%20Patricio%20del%20Cha%C3%B1ar%0A%0ATel%C3%A9fonos%20%C3%BAtiles%2C%20emergencias%20y%20contactos%20locales%20en%20un%20solo%20lugar.%20Es%20gratuita%20y%20est%C3%A1%20abierta%20para%20toda%20la%20comunidad.%0A%0AConsultala%20y%20compartila%20con%20quien%20pueda%20necesitarla%3A%0Ahttps%3A%2F%2Feliasmartinezcultural-glitch.github.io%2FSolcito%2F%0A%0AUna%20mano%20amiga%2C%20cerquita%20tuyo.%20%F0%9F%92%9B%0AOcarina%20Producciones" target="_blank" rel="noopener noreferrer" aria-label="Compartir Solcito por WhatsApp con un mensaje preparado">💚 Compartir Solcito por WhatsApp</a></div>
 </section>
 
@@ -672,6 +699,21 @@ footer .tiny{line-height:1.5}
   render();
  }));
  search.addEventListener('input',render);
+  document.querySelectorAll('.phone').forEach(phone=>{
+   if(phone.querySelector('.copy-phone'))return;
+   const number=phone.textContent.trim();
+   const button=document.createElement('button');
+   button.type='button';button.className='copy-phone';button.textContent='Copiar número';
+   button.setAttribute('aria-label','Copiar teléfono '+number);
+   button.addEventListener('click',async()=>{
+    let ok=false;
+    try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(number);ok=true;}else{const helper=document.createElement('textarea');helper.value=number;helper.setAttribute('readonly','');helper.style.position='fixed';helper.style.opacity='0';document.body.appendChild(helper);helper.select();ok=document.execCommand('copy');helper.remove();}}catch(e){}
+    button.textContent=ok?'¡Copiado!':'Anotá: '+number;
+    const status=document.getElementById('estadoCopiado');if(status)status.textContent=ok?'Número copiado: '+number:'Podés anotarlo en papel: '+number;
+    window.setTimeout(()=>{button.textContent='Copiar número';},2200);
+   });
+   phone.appendChild(button);
+  });
  const copyButton=document.querySelector('.copy-alias');
  if(copyButton){
   copyButton.addEventListener('click',async()=>{
@@ -686,6 +728,7 @@ footer .tiny{line-height:1.5}
    }catch(e){copyButton.textContent='Alias: ocarina.guitarra';}
   });
  }
+ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 })();
 </script>
 </body>
