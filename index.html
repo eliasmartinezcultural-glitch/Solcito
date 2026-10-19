@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#315746">
+  <meta name="description" content="Solcito, una agenda vecinal hecha con cariño para encontrar y anotar teléfonos útiles de San Patricio del Chañar.">
+  <title>Solcito | Agenda vecinal</title>
+  <style>
+    :root{--green:#244f3d;--green2:#e8f1e8;--cream:#fff8e9;--ink:#202820;--muted:#4c574e;--line:#d5dfd3;--gold:#f5d88a;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:19px;line-height:1.55}
+    a{color:#173f79;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+    a:focus-visible,button:focus-visible{outline:4px solid #b26c00;outline-offset:4px}
+    .wrap{width:min(100% - 24px,900px);margin-inline:auto}
+    header{background:var(--green);color:#fff;padding:28px 0 26px;border-bottom:7px solid var(--gold)}
+    .brand{display:flex;gap:15px;align-items:center}
+    .sun{width:72px;height:72px;border-radius:50%;background:var(--gold);color:var(--green);display:grid;place-items:center;font-size:43px;flex-shrink:0}
+    h1{font-size:clamp(2.6rem,9vw,4.5rem);line-height:1;margin:0;letter-spacing:-1.5px}
+    .subtitle{font-size:clamp(1.25rem,4vw,1.65rem);font-weight:700;margin:8px 0 0}
+    .welcome{font-size:1.15rem;margin:23px 0 0;max-width:680px}
+    main{padding:24px 0 42px}
+    .intro{background:#fff;border:2px solid var(--line);border-radius:18px;padding:20px;margin-bottom:22px}
+    h2{font-size:clamp(1.6rem,5vw,2.15rem);line-height:1.15;margin:0 0 10px;color:var(--green)}
+    h3{font-size:1.45rem;line-height:1.2;margin:0}
+    p{margin:8px 0}
+    .gentle{color:var(--muted)}
+    .section{margin:28px 0}
+    .cards{display:grid;grid-template-columns:1fr;gap:14px}
+    .card{background:#fff;border:2px solid var(--line);border-radius:18px;padding:20px;min-width:0}
+    .cardhead{display:flex;gap:13px;align-items:center;margin-bottom:12px}
+    .symbol{display:grid;place-items:center;width:54px;height:54px;border-radius:15px;background:var(--green2);font-size:30px;flex-shrink:0}
+    .kind{font-size:.95rem;text-transform:uppercase;letter-spacing:.04em;font-weight:700;color:var(--muted);margin:12px 0 2px}
+    .phone{font-size:clamp(2rem,8vw,3.25rem);line-height:1.12;font-weight:800;letter-spacing:.025em;overflow-wrap:anywhere;margin:0 0 9px}
+    .detail{font-size:1.05rem;margin:6px 0}
+    .source{font-size:.94rem;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+    .note{background:#fff0c7;border-left:7px solid #9b6a13;border-radius:8px;padding:16px;margin:18px 0}
+    .donate{background:#f7e8e2;border:2px solid #e2c5b8;border-radius:18px;padding:22px;margin-top:30px}
+    .alias{display:inline-block;background:#fff;border:2px dashed #b88b79;border-radius:10px;padding:10px 13px;font-weight:700;font-size:1.15rem}
+    .print{background:var(--green);color:#fff;border:0;border-radius:12px;padding:15px 20px;font-size:1.1rem;font-weight:700;min-height:56px;cursor:pointer}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}
+    footer{background:#e8eee5;padding:24px 0 30px;border-top:1px solid var(--line)}
+    footer p{font-size:1rem}
+    .tiny{font-size:.9rem;color:var(--muted)}
+    @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}.card{padding:22px}.span2{grid-column:span 2}}
+    @media print{body{background:#fff;font-size:16px}.wrap{width:100%}header{background:#fff!important;color:#000!important;border-bottom:3px solid #333;padding:10px 0}.sun{border:2px solid #333;background:#fff;color:#000}main{padding:10px 0}.intro,.card,.donate{break-inside:avoid;border:1px solid #777}.cards{grid-template-columns:1fr 1fr}.phone{font-size:27pt}a{color:#000;text-decoration:none}.print,.actions{display:none}.source{font-size:10pt}footer{background:#fff}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <div class="sun" aria-hidden="true">☀</div>
+        <div>
+          <h1>Solcito</h1>
+          <p class="subtitle">Agenda vecinal</p>
+        </div>
+      </div>
+      <p class="welcome"><strong>¡Hola, vecino! ¡Hola, vecina!</strong><br>Este espacio está hecho con cariño para ayudarte a encontrar teléfonos importantes. Andá despacito: no hace falta saber de tecnología.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="como">
+      <h2 id="como">Un lugar para encontrar y anotar</h2>
+      <p>Buscá el nombre del lugar. El teléfono está escrito en grande para que puedas <strong>leerlo y anotarlo en tu cuaderno</strong>.</p>
+      <p>También podés mostrar esta página a alguien de confianza para que te ayude.</p>
+      <div class="actions"><button class="print" type="button" onclick="window.print()">Imprimir o guardar en papel</button></div>
+    </section>
+
+    <section class="section" aria-labelledby="municipio">
+      <h2 id="municipio">🏛️ Municipalidad y oficinas</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="cardhead"><div class="symbol" aria-hidden="true">🏛️</div><h3>Municipalidad</h3></div>
+          <p class="kind">Teléfono general</p>
+          <p class="phone">299 408 4225</p>
+          <p class="detail"><strong>Dirección:</strong> Quili Malal 314, San Patricio del Chañar.</p>
+          <p class="detail"><strong>Horario publicado:</strong> lunes a viernes, de 8:30 a 12:30. Conviene confirmar antes de ir.</p>
+          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/" target="_blank" rel="noopener noreferrer">Municipalidad de San Patricio del Chañar</a>.</p>
+        </article>
+        <article class="card">
+          <div class="cardhead"><div class="symbol" aria-hidden="true">📄</div><h3>Mesa de entrada y turnos</h3></div>
+          <p class="kind">Administración municipal</p>
+          <p class="phone">299 420 2609</p>
+          <p class="detail">Para consultar por mesa de entrada y turnos.</p>
+          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p>
+        </article>
+        <article class="card">
+          <div class="cardhead"><div class="symbol" aria-hidden="true">🧾</div><h3>Recaudaciones</h3></div>
+          <p class="kind">Administración municipal</p>
+          <p class="phone">299 576 8856</p>
+          <p class="detail">Para consultas de recaudaciones municipales.</p>
+          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p>
+        </article>
+        <article class="card">
+          <div class="cardhead"><div class="symbol" aria-hidden="true">🛠️</div><h3>Obras y servicios públicos</h3></div>
+          <p class="kind">Coordinación e infraestructura</p>
+          <p class="phone">299 626 2687</p>
+          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-cordinacion" target="_blank" rel="noopener noreferrer">Coordinación e Infraestructura</a>.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="seguridad">
+      <h2 id="seguridad">🛡️ Seguridad ciudadana</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="cardhead"><div class="symbol" aria-hidden="true">☎️</div><h3>Administración</h3></div>
+          <p class="kind">Seguridad Ciudadana</p>
+          <p class="phone">299 458 4229</p>
+          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>.</p>
+        </article>
+        <article class="card">
+          <div class="cardhead"><div class="symbol" aria-hidden="true">📣</div><h3>Denuncias</h3></div>
+          <p class="kind">Seguridad Ciudadana</p>
+          <p class="phone">299 631 8081</p>
+          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>. Este contacto municipal no reemplaza los números oficiales de emergencia.</p>
+        </article>
+        <article class="card">
+          <div class="cardhead"><div class="symbol" aria-hidden="true">🐾</div><h3>Zoonosis</h3></div>
+          <p class="kind">Animales y consultas</p>
+          <p class="phone">299 631 3103</p>
+          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="salud">
+      <h2 id="salud">💚 Salud</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="cardhead"><div class="symbol" aria-hidden="true">🏥</div><h3>Hospital San Patricio del Chañar</h3></div>
+          <p class="kind">Teléfono publicado por Salud provincial</p>
+          <p class="phone">299 485 5084</p>
+          <p class="detail">Antes de depender de este número para una necesidad urgente, confirmá con el hospital si es el contacto adecuado para tu consulta.</p>
+          <p class="source">Fuente: <a href="https://salud.neuquen.gob.ar/seleccion-eventual-de-lavandera-o-para-hospital-san-patricio-del-chanar/" target="_blank" rel="noopener noreferrer">Ministerio de Salud de Neuquén</a>. Publicado en una convocatoria institucional; no se presenta como línea directa de emergencias.</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="note">
+      <strong>Un consejo importante:</strong> si hay peligro inmediato o una urgencia médica, buscá ayuda de una persona cercana y llamá al servicio de emergencia oficial correspondiente. Esta agenda está creciendo y todavía estamos verificando qué números locales conviene publicar como emergencias.
+    </aside>
+
+    <section class="donate" aria-labelledby="donar">
+      <h2 id="donar">💛 Una cajita para colaborar</h2>
+      <p>Solcito está hecho con cariño para acercar información útil a nuestros vecinos, especialmente a quienes más necesitan una mano.</p>
+      <p>Si esta agenda te sirve y querés ayudar a mantenerla, pronto vamos a compartir un alias para colaborar de manera voluntaria.</p>
+      <p><strong>Si hoy no podés colaborar, está todo bien.</strong> Podés usar y compartir esta agenda con tranquilidad.</p>
+      <div class="alias">Alias para colaborar: próximamente</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Solcito — Agenda vecinal</strong></p>
+      <p>Un proyecto amoroso de Ocarina Producciones para tender puentes entre vecinos, familias, personas mayores y sectores rurales.</p>
+      <p>Los teléfonos pueden cambiar. Si encontrás un dato incorrecto, confirmalo con la institución antes de usarlo y ayudanos a corregirlo.</p>
+      <p class="tiny">Información consultada en sitios oficiales el 19 de octubre de 2026. Solcito es una iniciativa comunitaria independiente; no es un sitio oficial del municipio ni de los servicios de salud.</p>
+    </div>
+  </footer>
+</body>
+</html>
