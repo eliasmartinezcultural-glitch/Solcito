@@ -677,6 +677,17 @@ footer .tiny{line-height:1.5}
 (function(){
  const search=document.getElementById('busqueda');
  const cards=Array.from(document.querySelectorAll('.contact-card'));
+ const firstLocal=document.querySelector('#contactos-locales .contact-card');
+ if(firstLocal&&firstLocal.querySelector('.phone')&&!firstLocal.querySelector('.badge')){
+  const verified=document.createElement('p');verified.className='badge';verified.textContent='Teléfono publicado por la Municipalidad';
+  firstLocal.querySelector('.phone').insertAdjacentElement('afterend',verified);
+ }
+ document.querySelectorAll('#contactos-locales .contact-card').forEach((card,index)=>{
+  if(index>0&&card.querySelector('.phone')&&!card.querySelector('.badge')){
+   const check=document.createElement('p');check.className='badge caution';check.textContent='Confirmar vigencia del teléfono';
+   card.querySelector('.phone').insertAdjacentElement('afterend',check);
+  }
+ });
  const filters=Array.from(document.querySelectorAll('.filter'));
  const empty=document.getElementById('sinResultados');
  let category='Todos';
