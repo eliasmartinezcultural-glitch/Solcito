@@ -457,6 +457,27 @@ footer .tiny{line-height:1.5}
 }
 @media print{.donate-float{position:static!important;width:auto!important;box-shadow:none!important;margin:8px 0!important}main.wrap{padding-bottom:0!important}.copy-phone,.copy-alias,.copy-status{display:none!important}.print-sheet{height:auto;min-height:0;overflow:visible}}
 
+
+/* Ajuste solicitado: menos etiquetas repetidas y teléfonos locales más legibles */
+@media screen{
+  #contactos-locales .phone,
+  #contactos-ampliados .phone{
+    font-size:clamp(1.9rem,5.2vw,2.55rem);
+    line-height:1.16;
+    letter-spacing:.015em;
+    margin:7px 0 9px;
+  }
+  #contactos-locales .card .badge.caution{display:none}
+  @media(max-width:690px){
+    #contactos-locales .phone,
+    #contactos-ampliados .phone{
+      font-size:clamp(1.85rem,8vw,2.35rem);
+      line-height:1.18;
+      overflow-wrap:anywhere;
+    }
+  }
+}
+
 </style>
 </head>
 <body>
@@ -712,12 +733,6 @@ footer .tiny{line-height:1.5}
   const verified=document.createElement('p');verified.className='badge';verified.textContent='Teléfono publicado por la Municipalidad';
   firstLocal.querySelector('.phone').insertAdjacentElement('afterend',verified);
  }
- document.querySelectorAll('#contactos-locales .contact-card').forEach((card,index)=>{
-  if(index>0&&card.querySelector('.phone')&&!card.querySelector('.badge')){
-   const check=document.createElement('p');check.className='badge caution';check.textContent='Confirmar vigencia del teléfono';
-   card.querySelector('.phone').insertAdjacentElement('afterend',check);
-  }
- });
  const filters=Array.from(document.querySelectorAll('.filter'));
  const empty=document.getElementById('sinResultados');
  let category='Todos';
@@ -769,7 +784,7 @@ footer .tiny{line-height:1.5}
    }catch(e){copyButton.textContent='Alias: ocarina.guitarra';}
   });
  }
- if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20261019-2',{updateViaCache:'none'}).catch(()=>{}));}
+ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20261019-3',{updateViaCache:'none'}).catch(()=>{}));}
 })();
 </script>
 </body>
