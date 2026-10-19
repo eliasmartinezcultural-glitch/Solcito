@@ -6,6 +6,8 @@
 <meta name="theme-color" content="#fff2c9">
 <meta name="description" content="Solcito: teléfonos importantes, emergencias y ayuda comunitaria para San Patricio del Chañar. Gratis, simple y hecho con cariño por Ocarina Producciones.">
 <meta name="author" content="Elías Martínez · Ocarina Producciones">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <meta property="og:site_name" content="Solcito · Ocarina Producciones">
@@ -64,6 +66,8 @@ h2{font-size:clamp(1.6rem,5vw,2.15rem);line-height:1.2;margin:0 0 10px;color:#35
 }
 
 /* Solcito 2.0: prioridad, lectura fácil y confianza */
+#contactos-locales .contact-card:not(.school-card){order:1}
+#contactos-locales .school-card{order:2}
 :root{scroll-padding-top:16px}
 body{font-size:17px;line-height:1.48}
 .wrap{width:min(100% - 28px,960px)}
