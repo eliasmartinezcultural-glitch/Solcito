@@ -249,6 +249,26 @@ footer{background:linear-gradient(140deg,#e7f5e9,#f8f2ff 65%,#fff0e6);border-top
 @media(prefers-reduced-motion:reduce){.solcito-nav a,.welcome-path,.emergency-link,.card,.filter,.copy-alias{transition:none!important}}
 @media print{.solcito-nav,.sunny-scene{display:none!important}.donate-float{display:none!important}}
 
+
+/* Jardín de ilustraciones propias de Solcito */
+.doodle-garden{display:flex;align-items:center;justify-content:space-around;gap:clamp(8px,2vw,22px);padding:15px clamp(10px,3vw,26px);margin:20px 0;border:1px solid #f0dfbd;border-radius:24px;background:linear-gradient(120deg,#fffaf0,#fff4f7 52%,#f2fbf4);box-shadow:0 8px 22px rgba(105,83,55,.07);overflow:hidden}
+.doodle-garden .doodle-art{width:clamp(46px,8vw,78px);height:auto;flex:0 1 78px;filter:drop-shadow(0 3px 1px rgba(87,69,52,.08));animation:solcito-float 4.8s ease-in-out infinite}
+.doodle-garden .doodle-art:nth-child(2n){animation-delay:-1.7s}
+.doodle-garden .doodle-art:nth-child(3n){animation-delay:-3s}
+.doodle-garden .garden-caption{max-width:175px;color:#715a53;font-size:.88rem;line-height:1.4;text-align:center;font-weight:700}
+.doodle-garden .garden-caption small{display:block;margin-top:4px;font-weight:500;font-size:.78rem}
+@keyframes solcito-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}
+.section-title .doodle{display:inline-grid;place-items:center;min-width:54px;min-height:54px;border-radius:18px;background:#fff0c9;font-size:1.8rem;box-shadow:inset 0 0 0 1px #f0d9a4}
+.welcome-community{position:relative;overflow:hidden}
+.welcome-community:after{content:"✿  ·  ♡  ·  ✿";position:absolute;right:15px;bottom:9px;color:#d9a2ad;font-size:1rem;letter-spacing:.2em;pointer-events:none;opacity:.85}
+.intro{position:relative}
+.intro:after{content:"🌼  🐞  🌷";display:block;text-align:right;font-size:1.25rem;letter-spacing:.25em;margin-top:8px;opacity:.92}
+.emergency{position:relative}
+.emergency:after{content:"💛  🤲  💛";display:block;text-align:center;font-size:1.2rem;letter-spacing:.4em;margin:15px 0 0;opacity:.9}
+.card .symbol{display:grid;place-items:center;min-width:48px;min-height:48px;border-radius:16px;background:linear-gradient(145deg,#fff4d7,#fff0f3);font-size:1.55rem;box-shadow:inset 0 0 0 1px rgba(228,190,145,.5)}
+@media(max-width:520px){.doodle-garden{gap:5px;padding:10px 7px;border-radius:18px;margin:14px 0}.doodle-garden .doodle-art{width:clamp(34px,11vw,52px);flex-basis:34px}.doodle-garden .garden-caption{font-size:.74rem;max-width:95px}.doodle-garden .garden-caption small{font-size:.68rem}.welcome-community:after{font-size:.8rem;right:8px}.intro:after{font-size:1rem;letter-spacing:.12em}}
+@media(prefers-reduced-motion:reduce){.doodle-garden .doodle-art{animation:none!important}}
+@media print{.doodle-garden,.intro:after,.emergency:after,.welcome-community:after{display:none!important}}
 </style>
 </head>
 <body>
@@ -381,12 +401,14 @@ footer{background:linear-gradient(140deg,#e7f5e9,#f8f2ff 65%,#fff0e6);border-top
 </div>
 <p class="source">Fuente oficial: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a> y <a href="https://seguridad.neuquen.gob.ar/direccion-provincial-de-seguridad/" target="_blank" rel="noopener noreferrer">Ministerio de Seguridad</a>.</p>
 </section>
-
-
-
-
-
-
+<div class="doodle-garden" aria-label="Ilustraciones de Solcito: flores, casa, corazón, mariposa y mate">
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Maceta con flores"><path d="M40 53V25M40 42L25 31M40 37L55 25" stroke="#4d946c" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M24 51h32l-5 22H29z" fill="#f0a7b8" stroke="#b96883" stroke-width="2"/><g fill="#ffd66f" stroke="#d99a48" stroke-width="1.5"><circle cx="40" cy="20" r="8"/><circle cx="23" cy="28" r="7"/><circle cx="57" cy="22" r="7"/></g><g fill="#f8c0d0"><circle cx="33" cy="17" r="6"/><circle cx="47" cy="17" r="6"/><circle cx="40" cy="11" r="6"/><circle cx="40" cy="28" r="6"/></g><circle cx="40" cy="20" r="3" fill="#fff2a4"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Casita acogedora"><path d="M9 38L40 12 71 38" fill="#f3b1bd" stroke="#a96776" stroke-width="3" stroke-linejoin="round"/><rect x="17" y="37" width="46" height="34" rx="3" fill="#fff5dc" stroke="#a98779" stroke-width="2.5"/><rect x="34" y="49" width="13" height="22" rx="2" fill="#9ccfe4" stroke="#688c9b" stroke-width="2"/><rect x="22" y="44" width="9" height="10" fill="#ffda85" stroke="#b68c50"/><rect x="51" y="44" width="8" height="10" fill="#ffda85" stroke="#b68c50"/><path d="M11 72q13-7 25 0t32 0" fill="none" stroke="#80b88b" stroke-width="4" stroke-linecap="round"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Corazón de amistad"><path d="M40 68S9 48 9 29C9 12 29 8 40 25 51 8 71 12 71 29 71 48 40 68 40 68z" fill="#f3a7b9" stroke="#bf6e87" stroke-width="2.5"/><path d="M24 29q3-7 9-3M48 26q6-4 9 3" fill="none" stroke="#fff6e8" stroke-width="3" stroke-linecap="round"/><path d="M30 43q10 9 20 0" fill="none" stroke="#9d536c" stroke-width="2.5" stroke-linecap="round"/><path d="M10 12l4 5m-8 1 6 1M66 8l-3 6m8 1-6 1" stroke="#e6b954" stroke-width="2.5" stroke-linecap="round"/></svg>
+<span class="garden-caption">Pequeños dibujos, una gran comunidad.<small>Todo esto es para vos 🌷</small></span>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Mariposa de colores"><path d="M39 39C15 4 2 25 17 43 5 58 24 70 39 48M41 39C65 4 78 25 63 43 75 58 56 70 41 48" fill="#cbb8f4" stroke="#8b78be" stroke-width="2.5"/><path d="M40 32v20" stroke="#785f9e" stroke-width="5" stroke-linecap="round"/><path d="M39 32l-5-8m7 8 5-8" stroke="#785f9e" stroke-width="2" stroke-linecap="round"/><circle cx="23" cy="37" r="4" fill="#fff4b9"/><circle cx="57" cy="37" r="4" fill="#fff4b9"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Mate para compartir"><path d="M22 31h36l-5 35H27z" fill="#a8d2a7" stroke="#5c916c" stroke-width="2.5"/><path d="M27 31q13 7 26 0" fill="#6e9b65" stroke="#5c916c" stroke-width="2"/><path d="M47 28L58 7" stroke="#9a9a9a" stroke-width="4" stroke-linecap="round"/><path d="M22 39H13q-5 17 11 17" fill="none" stroke="#5c916c" stroke-width="3"/><path d="M35 46q5 6 10 0" fill="none" stroke="#fff4d7" stroke-width="2.5" stroke-linecap="round"/><path d="M13 70q27-8 54 0" stroke="#edbd63" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+</div>
 
 <section class="welcome-community" aria-labelledby="bienvenida-comunidad">
   <div class="welcome-community-heading">
@@ -417,7 +439,16 @@ footer{background:linear-gradient(140deg,#e7f5e9,#f8f2ff 65%,#fff0e6);border-top
 <button class="filter" type="button" data-filter="Ayuda" aria-pressed="false">🤝 Ayuda y derechos</button><button class="filter" type="button" data-filter="Educación" aria-pressed="false">📚 Escuelas y formación</button><button class="filter" type="button" data-filter="Comunidad" aria-pressed="false">🎨 Cultura y comunidad</button>
 </div>
 <p class="muted">No te preocupes si no encontrás algo enseguida. Probá con otra palabra o elegí “Todos”.</p>
-</section><div class="section-title"><span class="doodle" aria-hidden="true">🏡</span><div><h2>Primero, lo más cercano: San Patricio del Chañar</h2><p class="muted">Teléfonos locales para trámites, servicios y consultas del pueblo.</p></div></div><div class="cards" id="contactos-locales"><article class="card contact-card" data-category="Municipalidad" data-search="municipalidad municipio telefono general direccion quilimal mal"><div class="cardhead"><div class="symbol">🏛️</div><h3>Municipalidad</h3></div><p class="category">Municipalidad · teléfono general</p><p class="phone">299 408 4225</p><p class="detail"><b>Dirección:</b> Quili Malal 314, San Patricio del Chañar.<br><b>Horario publicado:</b> lunes a viernes, 8:30 a 12:30. Conviene confirmar antes de ir.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/" target="_blank" rel="noopener noreferrer">sitio oficial municipal</a>.</p></article>
+</section>
+<div class="doodle-garden" aria-label="Dibujos de ayuda y aprendizaje">
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Manos que ayudan"><path d="M11 43l17-17q4-4 8 1l4 5 7-7q4-4 8 0l14 14-19 23-19-3z" fill="#ffd6a0" stroke="#b98661" stroke-width="2.5" stroke-linejoin="round"/><path d="M29 43l9 8q4 3 7-1l11-12" fill="none" stroke="#b98661" stroke-width="3" stroke-linecap="round"/><path d="M16 19l3 6m-9 0 7 1M63 17l-3 6m10 2-7 1" stroke="#e8b65b" stroke-width="3" stroke-linecap="round"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Libros de colores"><path d="M12 21q15-6 28 2v40q-13-8-28-2z" fill="#f4b0c1" stroke="#b86c85" stroke-width="2.5"/><path d="M40 23q13-8 28-2v40q-15-6-28 2z" fill="#9ed2c0" stroke="#5e9a85" stroke-width="2.5"/><path d="M18 31q9-2 16 2M18 39q9-2 16 2M46 31q9-2 16-1M46 39q9-2 16-1" stroke="#fff9e9" stroke-width="2.5" stroke-linecap="round"/><path d="M40 22v42" stroke="#8c7566" stroke-width="2.5"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Pajarito en una rama"><path d="M9 61q28-16 61-2" fill="none" stroke="#7cae7d" stroke-width="4" stroke-linecap="round"/><path d="M22 43q-2-18 17-21 18 1 19 20-9 17-25 11z" fill="#9ed5e9" stroke="#648fa1" stroke-width="2.5"/><path d="M30 44q9-10 20 0-9 12-20 0" fill="#fff0b9" stroke="#d7ad5c" stroke-width="1.5"/><circle cx="46" cy="32" r="2.5" fill="#514a4b"/><path d="M57 35l12 5-12 4" fill="#f2b35c" stroke="#c88a3e" stroke-width="2" stroke-linejoin="round"/><path d="M34 53v7m8-7v7" stroke="#c88a3e" stroke-width="2.5" stroke-linecap="round"/></svg>
+<span class="garden-caption">Preguntar también es saber.<small>Vamos paso a paso 💛</small></span>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Sobre con un corazón"><rect x="10" y="20" width="60" height="43" rx="6" fill="#fff9e9" stroke="#c7a38d" stroke-width="2.5"/><path d="M12 25l28 22 28-22" fill="none" stroke="#df9db0" stroke-width="3"/><path d="M40 58S27 49 27 42q0-10 13-1 13-9 13 1 0 7-13 16z" fill="#f2a7b9" stroke="#bd6f86" stroke-width="1.5"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Sol sonriente"><circle cx="40" cy="40" r="20" fill="#ffd46f" stroke="#d8a044" stroke-width="2.5"/><g stroke="#d8a044" stroke-width="3" stroke-linecap="round"><path d="M40 7v7M40 66v7M7 40h7M66 40h7M17 17l5 5M58 58l5 5M63 17l-5 5M22 58l-5 5"/></g><path d="M31 37q3 4 6 0m6 0q3 4 6 0m-16 9q7 7 14 0" fill="none" stroke="#785a48" stroke-width="2.5" stroke-linecap="round"/></svg>
+</div>
+<div class="section-title"><span class="doodle" aria-hidden="true">🏡</span><div><h2>Primero, lo más cercano: San Patricio del Chañar</h2><p class="muted">Teléfonos locales para trámites, servicios y consultas del pueblo.</p></div></div><div class="cards" id="contactos-locales"><article class="card contact-card" data-category="Municipalidad" data-search="municipalidad municipio telefono general direccion quilimal mal"><div class="cardhead"><div class="symbol">🏛️</div><h3>Municipalidad</h3></div><p class="category">Municipalidad · teléfono general</p><p class="phone">299 408 4225</p><p class="detail"><b>Dirección:</b> Quili Malal 314, San Patricio del Chañar.<br><b>Horario publicado:</b> lunes a viernes, 8:30 a 12:30. Conviene confirmar antes de ir.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/" target="_blank" rel="noopener noreferrer">sitio oficial municipal</a>.</p></article>
 <article class="card contact-card" data-category="Municipalidad" data-search="mesa entrada turnos tramites administracion"><div class="cardhead"><div class="symbol">📄</div><h3>Mesa de entrada y turnos</h3></div><p class="category">Municipalidad · administración</p><p class="phone">299 420 2609</p><p class="detail">Para consultar por mesa de entrada y turnos.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p></article>
 <article class="card contact-card" data-category="Municipalidad" data-search="recaudaciones pagos tasas impuestos municipalidad"><div class="cardhead"><div class="symbol">🧾</div><h3>Recaudaciones</h3></div><p class="category">Municipalidad · pagos y consultas</p><p class="phone">299 576 8856</p><p class="detail">Para consultas de recaudaciones municipales.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p></article>
 <article class="card contact-card" data-category="Municipalidad" data-search="compras proveedores municipalidad"><div class="cardhead"><div class="symbol">🛍️</div><h3>Compras municipales</h3></div><p class="category">Municipalidad · proveedores</p><p class="phone">299 421 4821</p><p class="detail">Contacto publicado para el área de Compras.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p></article>
@@ -466,6 +497,14 @@ footer{background:linear-gradient(140deg,#e7f5e9,#f8f2ff 65%,#fff0e6);border-top
 
 </main>
 
+<div class="doodle-garden" aria-label="Ilustraciones para recordar que nadie está solo">
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Dos personas juntas"><circle cx="28" cy="24" r="10" fill="#e8b38c" stroke="#9d705c" stroke-width="2"/><circle cx="53" cy="24" r="10" fill="#c98967" stroke="#8e5f4c" stroke-width="2"/><path d="M12 62q0-25 16-25t16 25z" fill="#f0a9bc" stroke="#b86d84" stroke-width="2"/><path d="M37 62q0-25 16-25t16 25z" fill="#9fd2b9" stroke="#60967d" stroke-width="2"/><path d="M34 47l7 8 7-8" fill="none" stroke="#fff4df" stroke-width="3" stroke-linecap="round"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Flor amarilla"><path d="M40 42v29m0-12q-12-12-18-4 8 12 18 4m0-9q12-12 18-4-8 12-18 4" fill="#9bc99d" stroke="#60956b" stroke-width="2.5" stroke-linecap="round"/><g fill="#ffd66e" stroke="#d9a149" stroke-width="2"><ellipse cx="40" cy="21" rx="8" ry="13"/><ellipse cx="40" cy="21" rx="8" ry="13" transform="rotate(60 40 29)"/><ellipse cx="40" cy="21" rx="8" ry="13" transform="rotate(120 40 29)"/></g><circle cx="40" cy="29" r="7" fill="#a97549"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Casita y corazón"><path d="M12 37L40 14 68 37" fill="#eaa6b8" stroke="#a9687a" stroke-width="3" stroke-linejoin="round"/><path d="M19 35v34h42V35" fill="#fff5dc" stroke="#aa8b7c" stroke-width="2.5"/><path d="M40 58S28 50 28 44q0-9 12-2 12-7 12 2 0 6-12 14z" fill="#f0a3b6" stroke="#bf6f86" stroke-width="1.5"/><path d="M8 72q12-5 24 0t24 0 16 0" fill="none" stroke="#8fbd8d" stroke-width="3" stroke-linecap="round"/></svg>
+<span class="garden-caption">Una agenda hecha con cariño.<small>Libre, gratuita y comunitaria 🌼</small></span>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Estrellitas de esperanza"><path d="M40 8l7 20 21 1-16 13 5 21-17-12-17 12 5-21L12 29l21-1z" fill="#ffd56d" stroke="#d6a348" stroke-width="2.5" stroke-linejoin="round"/><circle cx="17" cy="15" r="3" fill="#eaa3b5"/><circle cx="66" cy="16" r="3" fill="#9fcfb7"/><circle cx="12" cy="59" r="3" fill="#b8a6ed"/></svg>
+<svg class="doodle-art" viewBox="0 0 80 80" role="img" aria-label="Pajarito volando"><path d="M8 42q13-18 26 0 13-18 26 0" fill="none" stroke="#8ebfd4" stroke-width="5" stroke-linecap="round"/><path d="M47 25l9-10m-9 10 13-2" fill="none" stroke="#8ebfd4" stroke-width="3" stroke-linecap="round"/><path d="M16 61q7-7 14 0t14 0t14 0" fill="none" stroke="#edb0c0" stroke-width="3" stroke-linecap="round"/></svg>
+</div>
 <aside class="donate-float" id="colaborar" aria-label="Colaboración voluntaria con Solcito">
   <div class="donate-float-flower" aria-hidden="true">🌼</div>
   <div class="donate-float-copy">
