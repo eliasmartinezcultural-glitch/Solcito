@@ -304,6 +304,28 @@ footer{background:linear-gradient(140deg,#e7f5e9,#f8f2ff 65%,#fff0e6);border-top
 @media(prefers-reduced-motion:reduce){.doodle-garden .doodle-art{animation:none!important}}
 @media print{.doodle-garden{display:none!important}}
 
+
+/* CIERRE FINAL · evitar que la colaboración tape teléfonos o controles */
+.donate-float{
+  position:static!important;inset:auto!important;
+  width:min(calc(100% - 28px),1000px)!important;
+  margin:22px auto 26px!important;
+  z-index:auto!important;
+}
+main{padding-bottom:38px!important}
+@media(max-width:690px){
+  .donate-float{
+    left:auto!important;right:auto!important;bottom:auto!important;
+    width:calc(100% - 24px)!important;
+    margin:18px auto 22px!important;
+    grid-template-columns:27px minmax(0,1fr) auto;
+  }
+  main{padding-bottom:38px!important}
+}
+@media(max-width:380px){
+  .donate-float{grid-template-columns:23px minmax(0,1fr) auto}
+}
+
 </style>
 </head>
 <body>
@@ -458,7 +480,7 @@ footer{background:linear-gradient(140deg,#e7f5e9,#f8f2ff 65%,#fff0e6);border-top
   <div class="welcome-paths">
     <a class="welcome-path path-help" href="#busqueda"><span class="path-icon" aria-hidden="true">🤲</span><span><strong>Hoy necesito una mano</strong><small>Busquemos juntos el contacto que necesitás.</small></span><span class="path-arrow" aria-hidden="true">→</span></a>
     <a class="welcome-path path-community" href="#contactos-locales"><span class="path-icon" aria-hidden="true">🏡</span><span><strong>Quiero conocer mi comunidad</strong><small>Encontrá servicios, escuelas y espacios del pueblo.</small></span><span class="path-arrow" aria-hidden="true">→</span></a>
-    <button class="welcome-path path-give" type="button" onclick="document.querySelector('.donate-float')?.scrollIntoView({behavior:'smooth',block:'nearest'});document.querySelector('.copy-alias')?.focus()"><span class="path-icon" aria-hidden="true">💛</span><span><strong>Quiero colaborar</strong><small>Conocé una forma sencilla y voluntaria de apoyar este proyecto.</small></span><span class="path-arrow" aria-hidden="true">→</span></button>
+    <button class="welcome-path path-give" type="button" onclick="document.querySelector('.donate-float')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});document.querySelector('.copy-alias')?.focus()"><span class="path-icon" aria-hidden="true">💛</span><span><strong>Quiero colaborar</strong><small>Conocé una forma sencilla y voluntaria de apoyar este proyecto.</small></span><span class="path-arrow" aria-hidden="true">→</span></button>
   </div>
   <p class="welcome-promise">🌷 Cada persona puede necesitar una mano en algún momento. Esta agenda está para acercarnos un poquito más.</p>
 </section>
