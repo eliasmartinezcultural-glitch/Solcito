@@ -135,6 +135,86 @@ footer{padding:20px 0 26px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
+
+/* SOLCITO · diseño comunitario colorido, cálido y accesible */
+:root{
+ --ink:#343e4c;--muted:#515e69;--cream:#fffaf2;--line:#e4d9d0;
+ --green:#24664f;--pink:#ffe0e9;--yellow:#ffe79a;--mint:#d6f3e5;
+ --lilac:#e9e2ff;--blue:#d9efff;--peach:#ffdfc7
+}
+body{background:linear-gradient(180deg,#fffaf2 0%,#fff8f4 34%,#f6fbf7 100%);color:var(--ink)}
+.hero{
+ background:
+  radial-gradient(circle at 8% 12%,#fff9 0 5%,transparent 5.3%),
+  radial-gradient(circle at 93% 15%,#ffffffa8 0 4%,transparent 4.3%),
+  linear-gradient(125deg,#ffe78f 0%,#ffdce8 35%,#e4ddff 67%,#d6f3e5 100%);
+ border-bottom:6px solid transparent;
+ border-image:linear-gradient(90deg,#f5bd4c,#ed9db6,#a99ce9,#8fc6a5) 1;
+}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#8c6177 1.2px,transparent 1.2px);background-size:19px 19px;mask-image:linear-gradient(90deg,black,transparent 42%,transparent 62%,black)}
+.hero:after{content:"✿  ♡  ☀  ♡  ✿";color:#865c78;opacity:.75}
+.sun{background:radial-gradient(circle at 35% 30%,#fff5bf,#ffc74f 72%);border-color:#fff;border-width:4px;box-shadow:0 5px 0 #e3a942,0 0 0 6px #ffffff60}
+h1{color:#245f4a;text-shadow:0 2px 0 #ffffffb8}
+.subtitle{color:#674a69}
+.belonging{background:linear-gradient(110deg,#ffffffed,#fff8e6ed);border:2px dashed #d895ae;box-shadow:0 4px 0 #e9c4d4}
+.community-ribbon span:nth-child(1){background:#ffe4ed}
+.community-ribbon span:nth-child(2){background:#d9f2e5}
+.community-ribbon span:nth-child(3){background:#fff0bd}
+.community-ribbon span:nth-child(4){background:#e9e2ff}
+.community-ribbon span:nth-child(5){background:#dcefff}
+.intro{background:linear-gradient(135deg,#fff 0%,#fff9e9 100%);border:2px solid #ecd6a4;box-shadow:0 4px 0 #f3e3bd}
+.intro h2{color:#2c6a51}
+.btn{box-shadow:0 3px 0 #244c3d20;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 0 #244c3d25}
+.btn.secondary{background:#f0eaff;border-color:#cfc3f4;color:#493e78}
+.whatsapp-btn{background:linear-gradient(135deg,#18784b,#2c9963);color:#fff}
+.emergency{background:linear-gradient(135deg,#fff0f2,#fff8e9);border-color:#e7aab9;box-shadow:0 4px 0 #f1dadd}
+.emergency h2{color:#8e2e4a}
+.emergency-link{border-color:#e8bac6;box-shadow:0 2px 0 #e9d4d9}
+.emergency-link:nth-child(3n+1){background:linear-gradient(120deg,#fff,#fff0f1)}
+.emergency-link:nth-child(3n+2){background:linear-gradient(120deg,#fff,#fff4d6)}
+.emergency-link:nth-child(3n){background:linear-gradient(120deg,#fff,#f0eaff)}
+.emergency-link:focus-visible{outline-color:#8d5cc4}
+.welcome-community{position:relative;overflow:hidden;margin:18px 0 22px;padding:19px;border-radius:24px;border:2px solid #d7c9ee;background:linear-gradient(125deg,#fff0c7 0%,#ffe5ee 42%,#e6e1ff 72%,#dcf4e5 100%);box-shadow:0 5px 0 #e7d9e6}
+.welcome-community:after{content:"✿  ·  ♡  ·  ✿";position:absolute;right:15px;bottom:7px;font-size:1.35rem;color:#a66f8a;opacity:.55;pointer-events:none}
+.welcome-community-heading{display:flex;align-items:flex-start;gap:13px}
+.welcome-flower{font-size:2.6rem;flex-shrink:0;filter:drop-shadow(0 2px 0 #ffffffb0)}
+.welcome-butterfly{font-size:2rem;margin-left:auto;flex-shrink:0}
+.eyebrow{font-size:.78rem;font-weight:900;letter-spacing:.1em;color:#75516d;margin:0 0 5px}
+.welcome-community h2{font-size:clamp(1.45rem,4vw,2rem);line-height:1.12;color:#315f4c;margin:0 0 7px}
+.welcome-community-heading p:not(.eyebrow){margin:0;max-width:760px}
+.welcome-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+.welcome-path{display:flex;align-items:center;gap:10px;text-align:left;text-decoration:none;color:#344050;border:2px solid #ffffffd9;border-radius:17px;padding:12px;background:#ffffffed;min-width:0;cursor:pointer;font:inherit;box-shadow:0 3px 0 #8e71851b;transition:transform .15s ease,box-shadow .15s ease}
+.welcome-path:hover{transform:translateY(-2px);box-shadow:0 5px 0 #8e718525}
+.path-icon{display:grid;place-items:center;width:43px;height:43px;flex-shrink:0;border-radius:14px;font-size:1.65rem;background:#fff0bd}
+.path-help .path-icon{background:#dff4e7}
+.path-community .path-icon{background:#e8e1ff}
+.path-give .path-icon{background:#ffe0e9}
+.welcome-path strong{display:block;font-size:.98rem;line-height:1.25;color:#315b49}
+.welcome-path small{display:block;margin-top:4px;font-size:.82rem;line-height:1.3;color:#4d5964}
+.path-arrow{font-size:1.4rem;font-weight:900;color:#8c5d80;margin-left:auto}
+.welcome-promise{margin:14px 0 0;padding:10px 12px;background:#ffffffb8;border-radius:13px;font-size:.94rem}
+.toolbar{background:linear-gradient(140deg,#fff,#f1faff);border-color:#c9e0ee;box-shadow:0 3px 0 #dceaf0}
+.filter{border-color:#d7c9ec;background:#fff}
+.filter[aria-pressed="true"]{background:#d9f3e4;border-color:#73b89a;color:#20563d;box-shadow:0 2px 0 #c5e6d2}
+.card{border-color:#e5d9ce}
+.card:nth-child(4n+1){background:linear-gradient(145deg,#fff 65%,#ffe7ee)}
+.card:nth-child(4n+2){background:linear-gradient(145deg,#fff 65%,#def5e8)}
+.card:nth-child(4n+3){background:linear-gradient(145deg,#fff 65%,#eae4ff)}
+.card:nth-child(4n){background:linear-gradient(145deg,#fff 65%,#fff0c8)}
+.symbol{border-color:#f0dca0;box-shadow:0 2px 0 #eadcc7}
+.donate-float{background:linear-gradient(135deg,#fff0bd,#ffe2ec 55%,#e5e1ff);border-color:#d8a6bb;box-shadow:0 6px 24px #4c37472c,0 0 0 3px #ffffffbd}
+.donate-float-copy strong{color:#2b644d}
+.copy-alias{background:#fff;border-color:#9e79a6;color:#4d3d69}
+footer{background:linear-gradient(115deg,#dff4e7,#e9e3ff 50%,#ffe9e0);border-top:5px solid #c9b7df}
+@media(max-width:760px){.welcome-paths{grid-template-columns:1fr}.welcome-path{padding:10px 12px}.welcome-community{padding:15px}.welcome-butterfly{display:none}.welcome-path small{font-size:.84rem}}
+@media(prefers-reduced-motion:reduce){.btn,.welcome-path{transition:none}.btn:hover,.welcome-path:hover{transform:none}}
+@media print{
+ .welcome-community{display:none!important}
+ .hero{background:#fff!important;border-bottom:1.5pt solid #b88aa9}
+ .print-welcome{border-color:#d895ae;background:#fff!important}
+}
+
 </style>
 </head>
 <body>
@@ -144,7 +224,7 @@ footer{padding:20px 0 26px}
 <div class="brand"><div class="sun" aria-hidden="true">☀️</div><div><h1>Solcito</h1><p class="subtitle">Una mano amiga, cerquita tuyo</p></div></div>
 <div class="sticker" aria-hidden="true">🌷🦋</div>
 </div>
-<p class="welcome"><strong>¡Hola, querida vecina! ¡Hola, querido vecino!</strong><br>Solcito es una agenda hecha entre vecinos, con cariño y sin ánimo de lucro. Primero te acercamos teléfonos importantes de nuestro querido San Patricio del Chañar; después, algunos contactos provinciales y nacionales que también pueden ayudarte. No hace falta saber de aplicaciones: podés mirar, leer y anotar los números en tu cuaderno.</p><div class="belonging" role="note"><span class="belonging-flower" aria-hidden="true">🌼</span><div><strong>Acá nadie tiene que demostrar que sabe, tener plata ni pedir permiso para pertenecer.</strong><p>Si necesitás ayuda, sos bienvenido. Si querés dar una mano, también. Y si hoy no podés aportar nada, seguís siendo parte de la comunidad.</p></div><span class="belonging-butterfly" aria-hidden="true">🦋</span></div>
+<p class="welcome"><strong>¡Hola! Qué alegría que estés acá. 💛</strong><br>Solcito es una agenda hecha con cariño para toda la comunidad de San Patricio del Chañar. No importa tu edad, cuánto sabés usar el celular, de dónde venís ni cuánto tenés. Podés venir a buscar ayuda, compartir información, colaborar o simplemente conocer. <strong>Acá hay lugar para vos.</strong></p><div class="belonging" role="note"><span class="belonging-flower" aria-hidden="true">🌼</span><div><strong>Acá nadie tiene que demostrar que sabe, tener plata ni pedir permiso para pertenecer.</strong><p>Si necesitás ayuda, sos bienvenido. Si querés dar una mano, también. Y si hoy no podés aportar nada, seguís siendo parte de la comunidad.</p></div><span class="belonging-butterfly" aria-hidden="true">🦋</span></div>
 <div class="hero-note">🌼 A tu ritmo, sin apuro. Esta agenda es para vos.</div><div class="community-ribbon" aria-label="Comunidad"><span>🌷</span><span>🤝</span><span>🧉</span><span>🏡</span><span>💛</span><p>Un pueblo se hace más lindo cuando nos damos una mano.</p></div>
 </div>
 </header>
@@ -153,7 +233,7 @@ footer{padding:20px 0 26px}
   <header class="print-head">
     <div class="print-sun">☀</div><div><h1>Solcito <span>🌼</span></h1><p>Agenda vecinal esencial · San Patricio del Chañar</p></div>
   </header>
-  <p class="print-welcome"><strong>Acá nadie tiene que demostrar que sabe, tener plata ni pedir permiso para pertenecer.</strong> Si necesitás ayuda, sos bienvenido. Si querés dar una mano, también. Y si hoy no podés aportar nada, seguís siendo parte de la comunidad. 💛</p>
+  <p class="print-welcome"><strong>¡Acá hay lugar para vos!</strong> No importa tu edad, cuánto sabés usar el celular ni cuánto tenés. Si necesitás ayuda, sos bienvenido. Si querés dar una mano, también. Y si hoy solo venís a consultar, seguís siendo parte de la comunidad. 💛</p>
   <div class="print-columns">
     <section class="print-group emergency-print"><h2>❤️ Emergencias</h2>
       <p><b>Emergencia médica · SIEN:</b> <strong>107</strong></p>
@@ -229,6 +309,25 @@ footer{padding:20px 0 26px}
 
 
 
+
+<section class="welcome-community" aria-labelledby="bienvenida-comunidad">
+  <div class="welcome-community-heading">
+    <span class="welcome-flower" aria-hidden="true">🌻</span>
+    <div>
+      <p class="eyebrow">ESTE ESPACIO ES DE LA COMUNIDAD</p>
+      <h2 id="bienvenida-comunidad">Entrá como sos. Hay lugar para vos. 💛</h2>
+      <p>No hace falta saber, tener ni demostrar nada. Cada persona llega con una historia distinta, y todas merecen respeto.</p>
+    </div>
+    <span class="welcome-butterfly" aria-hidden="true">🦋</span>
+  </div>
+  <div class="welcome-paths">
+    <a class="welcome-path path-help" href="#busqueda"><span class="path-icon" aria-hidden="true">🤲</span><span><strong>Hoy necesito una mano</strong><small>Busquemos juntos el contacto que necesitás.</small></span><span class="path-arrow" aria-hidden="true">→</span></a>
+    <a class="welcome-path path-community" href="#contactos-locales"><span class="path-icon" aria-hidden="true">🏡</span><span><strong>Quiero conocer mi comunidad</strong><small>Encontrá servicios, escuelas y espacios del pueblo.</small></span><span class="path-arrow" aria-hidden="true">→</span></a>
+    <button class="welcome-path path-give" type="button" onclick="document.querySelector('.donate-float')?.scrollIntoView({behavior:'smooth',block:'nearest'});document.querySelector('.copy-alias')?.focus()"><span class="path-icon" aria-hidden="true">💛</span><span><strong>Quiero colaborar</strong><small>Si podés, lo agradecemos de corazón. Si no, también sos bienvenido.</small></span><span class="path-arrow" aria-hidden="true">→</span></button>
+  </div>
+  <p class="welcome-promise">🌷 <strong>Ayudar no te hace más importante. Necesitar ayuda no te hace menos.</strong> Acá compartimos lo que podemos, cuando podemos.</p>
+</section>
+
 <section class="toolbar" aria-label="Buscar contactos">
 <label class="searchlabel" for="busqueda">🔎 ¿Qué número estás buscando?</label>
 <input class="search" id="busqueda" type="search" placeholder="Por ejemplo: hospital, agua, turnos..." autocomplete="off">
@@ -289,7 +388,7 @@ footer{padding:20px 0 26px}
 
 </main>
 
-<aside class="donate-float" aria-label="Colaboración voluntaria con Solcito">
+<aside class="donate-float" id="colaborar" aria-label="Colaboración voluntaria con Solcito">
   <div class="donate-float-flower" aria-hidden="true">🌼</div>
   <div class="donate-float-copy">
     <strong>Una mano para Solcito</strong>
@@ -298,7 +397,7 @@ footer{padding:20px 0 26px}
   </div>
   <button class="copy-alias" type="button" aria-label="Copiar alias de donación">Copiar alias</button>
 </aside>
-<footer><div class="wrap"><p><strong>☀️ Solcito — Una mano amiga, cerquita tuyo</strong></p><p>Una iniciativa comunitaria de Ocarina Producciones, creada por Elías Martínez, sin ánimo de lucro, para tender puentes entre vecinos, familias, personas mayores y comunidades rurales.</p><p class="tiny">Los datos se recopilan de fuentes municipales, provinciales y registros públicos educativos consultados el 19 de octubre de 2026. Algunos teléfonos escolares provienen de directorios públicos y están marcados para confirmar: Solcito no los presenta como verificados en tiempo real. La publicación no implica respaldo institucional. Si encontrás un dato que cambió, confirmalo con la institución.</p><p class="tiny">Creado con cariño por Elías Martínez · Ocarina Producciones. 🌼<br>Sin cuentas, sin instalación y sin pedir datos personales. Solcito no cobra por el acceso ni solicita información privada.</p></div></footer>
+<footer><div class="wrap"><p><strong>☀️ Solcito — Una mano amiga, cerquita tuyo</strong></p><p>Una iniciativa comunitaria de Ocarina Producciones, creada por Elías Martínez, sin ánimo de lucro, para tender puentes entre vecinos, familias, personas mayores y comunidades rurales.</p><p class="tiny">Los datos se recopilan de fuentes municipales, provinciales y registros públicos educativos consultados el 19 de octubre de 2026. Algunos teléfonos escolares provienen de directorios públicos y están marcados para confirmar: Solcito no los presenta como verificados en tiempo real. La publicación no implica respaldo institucional. Si encontrás un dato que cambió, confirmalo con la institución.</p><p class="tiny">Creado con cariño por Elías Martínez · Ocarina Producciones. 🌼<br>Colaborar es totalmente voluntario: tu presencia también suma. Sin cuentas, sin instalación y sin pedir datos personales.</p></div></footer>
 <script>
 (function(){
  const search=document.getElementById('busqueda');
