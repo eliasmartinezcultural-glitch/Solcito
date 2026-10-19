@@ -1,165 +1,140 @@
 <!doctype html>
 <html lang="es-AR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#315746">
-  <meta name="description" content="Solcito, una agenda vecinal hecha con cariño para encontrar y anotar teléfonos útiles de San Patricio del Chañar.">
-  <title>Solcito | Agenda vecinal</title>
-  <style>
-    :root{--green:#244f3d;--green2:#e8f1e8;--cream:#fff8e9;--ink:#202820;--muted:#4c574e;--line:#d5dfd3;--gold:#f5d88a;--white:#fff}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:19px;line-height:1.55}
-    a{color:#173f79;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-    a:focus-visible,button:focus-visible{outline:4px solid #b26c00;outline-offset:4px}
-    .wrap{width:min(100% - 24px,900px);margin-inline:auto}
-    header{background:var(--green);color:#fff;padding:28px 0 26px;border-bottom:7px solid var(--gold)}
-    .brand{display:flex;gap:15px;align-items:center}
-    .sun{width:72px;height:72px;border-radius:50%;background:var(--gold);color:var(--green);display:grid;place-items:center;font-size:43px;flex-shrink:0}
-    h1{font-size:clamp(2.6rem,9vw,4.5rem);line-height:1;margin:0;letter-spacing:-1.5px}
-    .subtitle{font-size:clamp(1.25rem,4vw,1.65rem);font-weight:700;margin:8px 0 0}
-    .welcome{font-size:1.15rem;margin:23px 0 0;max-width:680px}
-    main{padding:24px 0 42px}
-    .intro{background:#fff;border:2px solid var(--line);border-radius:18px;padding:20px;margin-bottom:22px}
-    h2{font-size:clamp(1.6rem,5vw,2.15rem);line-height:1.15;margin:0 0 10px;color:var(--green)}
-    h3{font-size:1.45rem;line-height:1.2;margin:0}
-    p{margin:8px 0}
-    .gentle{color:var(--muted)}
-    .section{margin:28px 0}
-    .cards{display:grid;grid-template-columns:1fr;gap:14px}
-    .card{background:#fff;border:2px solid var(--line);border-radius:18px;padding:20px;min-width:0}
-    .cardhead{display:flex;gap:13px;align-items:center;margin-bottom:12px}
-    .symbol{display:grid;place-items:center;width:54px;height:54px;border-radius:15px;background:var(--green2);font-size:30px;flex-shrink:0}
-    .kind{font-size:.95rem;text-transform:uppercase;letter-spacing:.04em;font-weight:700;color:var(--muted);margin:12px 0 2px}
-    .phone{font-size:clamp(2rem,8vw,3.25rem);line-height:1.12;font-weight:800;letter-spacing:.025em;overflow-wrap:anywhere;margin:0 0 9px}
-    .detail{font-size:1.05rem;margin:6px 0}
-    .source{font-size:.94rem;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
-    .note{background:#fff0c7;border-left:7px solid #9b6a13;border-radius:8px;padding:16px;margin:18px 0}
-    .donate{background:#f7e8e2;border:2px solid #e2c5b8;border-radius:18px;padding:22px;margin-top:30px}
-    .alias{display:inline-block;background:#fff;border:2px dashed #b88b79;border-radius:10px;padding:10px 13px;font-weight:700;font-size:1.15rem}
-    .print{background:var(--green);color:#fff;border:0;border-radius:12px;padding:15px 20px;font-size:1.1rem;font-weight:700;min-height:56px;cursor:pointer}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}
-    footer{background:#e8eee5;padding:24px 0 30px;border-top:1px solid var(--line)}
-    footer p{font-size:1rem}
-    .tiny{font-size:.9rem;color:var(--muted)}
-    @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}.card{padding:22px}.span2{grid-column:span 2}}
-    @media print{body{background:#fff;font-size:16px}.wrap{width:100%}header{background:#fff!important;color:#000!important;border-bottom:3px solid #333;padding:10px 0}.sun{border:2px solid #333;background:#fff;color:#000}main{padding:10px 0}.intro,.card,.donate{break-inside:avoid;border:1px solid #777}.cards{grid-template-columns:1fr 1fr}.phone{font-size:27pt}a{color:#000;text-decoration:none}.print,.actions{display:none}.source{font-size:10pt}footer{background:#fff}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff2c9">
+<meta name="description" content="Solcito: una agenda vecinal clara, amorosa y fácil de usar para San Patricio del Chañar y Neuquén.">
+<title>Solcito ☀️ | Una mano amiga</title>
+<style>
+:root{--ink:#3f4650;--muted:#626a72;--cream:#fffaf0;--pink:#ffe5eb;--pink2:#f6cbd7;--yellow:#fff0b8;--mint:#dff3e8;--mint2:#b9dfce;--lilac:#ece6ff;--blue:#e3f2ff;--peach:#ffe8d6;--white:#fff;--line:#e7dfd7;--green:#326b58;--red:#a12d3d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:19px/1.55 "Trebuchet MS",Arial,sans-serif}a{color:#254f8b;text-underline-offset:3px;overflow-wrap:anywhere}button,input{font:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:4px solid #8557b5;outline-offset:3px}
+.wrap{width:min(100% - 26px,1000px);margin:auto}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff0b8 0%,#ffe4e9 52%,#e3f4e8 100%);padding:26px 0 32px;border-bottom:5px solid #f3d68b}
+.hero:after{content:"✿　☁　♡　☀　✿";position:absolute;right:2%;bottom:5px;color:#bc9ba7;opacity:.5;font-size:clamp(1.3rem,4vw,2.2rem);letter-spacing:.2em;pointer-events:none}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:15px}.sun{width:76px;height:76px;border-radius:50%;background:#ffcf66;border:4px solid #fff9e8;display:grid;place-items:center;font-size:45px;box-shadow:0 5px 0 #e9b65c;flex-shrink:0}
+h1{font-size:clamp(3rem,10vw,5.4rem);line-height:.95;letter-spacing:-.05em;margin:0;color:#356754} .subtitle{margin:9px 0 0;font-size:clamp(1.2rem,4vw,1.7rem);font-weight:800;color:#785565}
+.sticker{font-size:clamp(2rem,7vw,3.4rem);transform:rotate(8deg)}.welcome{max-width:760px;font-size:1.17rem;margin:24px 0 4px}.welcome strong{color:#6e4e68}.hero-note{display:inline-block;background:#ffffffc9;border:2px dashed #dfb2c0;border-radius:20px;padding:9px 15px;margin-top:13px;font-weight:700}
+main{padding:24px 0 46px}.intro{background:#fff;border:2px solid #f0dfc9;border-radius:25px;padding:21px;box-shadow:0 5px 0 #f4e7d9}
+h2{font-size:clamp(1.6rem,5vw,2.15rem);line-height:1.2;margin:0 0 10px;color:#356754}h3{font-size:1.3rem;line-height:1.2;margin:0}p{margin:8px 0}.muted{color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.btn{border:0;border-radius:16px;padding:13px 18px;min-height:54px;font-weight:800;cursor:pointer;background:#356754;color:white}.btn.secondary{background:#fff;border:2px solid #c9ddd0;color:#315746}
+.emergency{margin:22px 0;background:#fff0f1;border:3px solid #eab9c2;border-radius:24px;padding:19px}.emergency h2{color:#8d3448}.emergency-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.emergency-link{background:#fff;border:2px solid #f0cbd1;border-radius:15px;padding:12px;text-decoration:none;color:var(--ink);display:block}.emergency-link b{display:block;font-size:1.65rem;line-height:1.25;color:#a12d3d;letter-spacing:.03em}.emergency-link span{font-size:.98rem}
+.toolbar{margin:26px 0 16px;background:#fff;border:2px solid var(--line);border-radius:22px;padding:17px}.searchlabel{font-weight:800;display:block;margin-bottom:8px}.search{width:100%;border:2px solid #cbd9d1;border-radius:14px;padding:14px;background:#fff;min-height:54px;color:var(--ink)}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.filter{border:2px solid #ded8e7;border-radius:999px;padding:9px 13px;background:#fff;color:#4b4d5a;cursor:pointer;font-weight:700}.filter[aria-pressed="true"]{background:#e3f2e8;border-color:#7bb59b;color:#245943}
+.section-title{display:flex;align-items:center;gap:12px;margin:30px 0 14px}.section-title .doodle{font-size:2rem;background:var(--yellow);border-radius:16px;padding:4px 10px}.cards{display:grid;grid-template-columns:1fr;gap:13px}.card{background:#fff;border:2px solid var(--line);border-radius:22px;padding:18px;min-width:0;box-shadow:0 4px 0 #eee5dc}.card:nth-child(4n+1){background:linear-gradient(150deg,#fff 75%,#fff0f3)}.card:nth-child(4n+2){background:linear-gradient(150deg,#fff 75%,#eaf7ef)}.card:nth-child(4n+3){background:linear-gradient(150deg,#fff 75%,#f1edff)}.card:nth-child(4n){background:linear-gradient(150deg,#fff 75%,#fff3d6)}
+.cardhead{display:flex;gap:12px;align-items:center;margin-bottom:11px}.symbol{width:55px;height:55px;border-radius:18px;display:grid;place-items:center;background:#fff0bd;font-size:30px;flex-shrink:0;border:1px solid #f2df9e}.category{font-size:.83rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#657168;margin:10px 0 3px}.phone{font-size:clamp(1.8rem,7vw,2.7rem);line-height:1.15;font-weight:900;letter-spacing:.015em;margin:0 0 9px;color:#315746;overflow-wrap:anywhere}.detail{font-size:1.02rem}.source{font-size:.9rem;border-top:1px solid #e6e1db;margin-top:13px;padding-top:10px}.badge{display:inline-block;background:#e4f2e8;color:#2f634e;border-radius:999px;padding:3px 9px;font-size:.83rem;font-weight:800;margin-bottom:7px}.badge.caution{background:#fff0c7;color:#76520a}.empty{background:#fff;border:2px dashed #cfc7d4;border-radius:20px;padding:22px;text-align:center;display:none}.note{background:#fff0c7;border-left:7px solid #d9a33c;border-radius:12px;padding:17px;margin:23px 0}.donate{background:linear-gradient(135deg,#ffe7ec,#fff1c8);border:2px solid #efc7cc;border-radius:25px;padding:22px;margin-top:30px}.alias{display:inline-block;background:#fff;border:2px dashed #d4a5ae;border-radius:12px;padding:10px 14px;font-weight:800}.heart{font-size:2rem}footer{background:#e8f2e9;border-top:4px solid #c5e0cf;padding:25px 0 32px}.tiny{font-size:.9rem;color:#606a63}
+@media(min-width:690px){.cards{grid-template-columns:1fr 1fr}.span2{grid-column:span 2}.emergency-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:390px){body{font-size:18px}.emergency-grid{grid-template-columns:1fr}.sun{width:62px;height:62px;font-size:36px}.sticker{display:none}}
+@media print{body{background:#fff;font-size:14px}.wrap{width:100%}.hero{background:#fff!important;padding:8px 0;border-bottom:2px solid #333}.sun{box-shadow:none;border:1px solid #333}.intro,.card,.emergency,.donate{box-shadow:none;break-inside:avoid;background:#fff!important}.cards{grid-template-columns:1fr 1fr}.phone{font-size:23pt}.actions,.toolbar,.sticker{display:none!important}.emergency-grid{grid-template-columns:repeat(3,1fr)}a{color:#000;text-decoration:none}footer{background:#fff}.section-title{margin-top:16px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="brand">
-        <div class="sun" aria-hidden="true">☀</div>
-        <div>
-          <h1>Solcito</h1>
-          <p class="subtitle">Agenda vecinal</p>
-        </div>
-      </div>
-      <p class="welcome"><strong>¡Hola, vecino! ¡Hola, vecina!</strong><br>Este espacio está hecho con cariño para ayudarte a encontrar teléfonos importantes. Andá despacito: no hace falta saber de tecnología.</p>
-    </div>
-  </header>
+<header class="hero">
+<div class="wrap">
+<div class="topline">
+<div class="brand"><div class="sun" aria-hidden="true">☀️</div><div><h1>Solcito</h1><p class="subtitle">Una mano amiga, cerquita tuyo</p></div></div>
+<div class="sticker" aria-hidden="true">🌷🦋</div>
+</div>
+<p class="welcome"><strong>¡Hola, querida vecina! ¡Hola, querido vecino!</strong><br>Preparamos este rinconcito con mucho cariño para que encontrar un teléfono sea más fácil. No hace falta saber de aplicaciones: podés mirar, leer y anotar los números en tu cuaderno.</p>
+<div class="hero-note">🌼 A tu ritmo, sin apuro. Esta agenda es para vos.</div>
+</div>
+</header>
+<main class="wrap">
+<section class="intro">
+<h2>💌 Bienvenida, bienvenido</h2>
+<p>Elegí el tema que necesitás o escribí una palabra en el buscador. Cada teléfono aparece <strong>bien grande</strong> para que sea fácil de leer y copiar.</p>
+<p>Si te resulta más cómodo, pedile a alguien de confianza que te ayude a buscar o imprimir esta agenda.</p>
+<div class="actions"><button class="btn" onclick="window.print()" type="button">🖨️ Imprimir la agenda</button><button class="btn secondary" type="button" onclick="document.getElementById('busqueda').focus()">🔎 Buscar un teléfono</button></div>
+</section>
 
-  <main class="wrap">
-    <section class="intro" aria-labelledby="como">
-      <h2 id="como">Un lugar para encontrar y anotar</h2>
-      <p>Buscá el nombre del lugar. El teléfono está escrito en grande para que puedas <strong>leerlo y anotarlo en tu cuaderno</strong>.</p>
-      <p>También podés mostrar esta página a alguien de confianza para que te ayude.</p>
-      <div class="actions"><button class="print" type="button" onclick="window.print()">Imprimir o guardar en papel</button></div>
-    </section>
+<section class="emergency" aria-labelledby="urgencias">
+<h2 id="urgencias">❤️ Si necesitás ayuda urgente</h2>
+<p>Estos números figuran en información oficial de la Provincia del Neuquén. Usalos para la situación indicada. Si podés, pedile ayuda a una persona cercana.</p>
+<div class="emergency-grid">
+<a class="emergency-link" href="tel:107"><span>🚑 Emergencia médica · SIEN</span><b>107</b></a>
+<a class="emergency-link" href="tel:100"><span>🚒 Bomberos</span><b>100</b></a>
+<a class="emergency-link" href="tel:101"><span>👮 Policía</span><b>101</b></a>
+<a class="emergency-link" href="tel:103"><span>🌧️ Defensa Civil</span><b>103</b></a>
+<a class="emergency-link" href="tel:148"><span>💜 Asistencia por violencia</span><b>148</b></a>
+<a class="emergency-link" href="tel:145"><span>🧡 Trata de personas</span><b>145</b></a>
+</div>
+<p class="source">Fuente oficial: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a> y <a href="https://seguridad.neuquen.gob.ar/direccion-provincial-de-seguridad/" target="_blank" rel="noopener noreferrer">Ministerio de Seguridad</a>.</p>
+</section>
 
-    <section class="section" aria-labelledby="municipio">
-      <h2 id="municipio">🏛️ Municipalidad y oficinas</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="cardhead"><div class="symbol" aria-hidden="true">🏛️</div><h3>Municipalidad</h3></div>
-          <p class="kind">Teléfono general</p>
-          <p class="phone">299 408 4225</p>
-          <p class="detail"><strong>Dirección:</strong> Quili Malal 314, San Patricio del Chañar.</p>
-          <p class="detail"><strong>Horario publicado:</strong> lunes a viernes, de 8:30 a 12:30. Conviene confirmar antes de ir.</p>
-          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/" target="_blank" rel="noopener noreferrer">Municipalidad de San Patricio del Chañar</a>.</p>
-        </article>
-        <article class="card">
-          <div class="cardhead"><div class="symbol" aria-hidden="true">📄</div><h3>Mesa de entrada y turnos</h3></div>
-          <p class="kind">Administración municipal</p>
-          <p class="phone">299 420 2609</p>
-          <p class="detail">Para consultar por mesa de entrada y turnos.</p>
-          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p>
-        </article>
-        <article class="card">
-          <div class="cardhead"><div class="symbol" aria-hidden="true">🧾</div><h3>Recaudaciones</h3></div>
-          <p class="kind">Administración municipal</p>
-          <p class="phone">299 576 8856</p>
-          <p class="detail">Para consultas de recaudaciones municipales.</p>
-          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p>
-        </article>
-        <article class="card">
-          <div class="cardhead"><div class="symbol" aria-hidden="true">🛠️</div><h3>Obras y servicios públicos</h3></div>
-          <p class="kind">Coordinación e infraestructura</p>
-          <p class="phone">299 626 2687</p>
-          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-cordinacion" target="_blank" rel="noopener noreferrer">Coordinación e Infraestructura</a>.</p>
-        </article>
-      </div>
-    </section>
+<section class="toolbar" aria-label="Buscar contactos">
+<label class="searchlabel" for="busqueda">🔎 ¿Qué número estás buscando?</label>
+<input class="search" id="busqueda" type="search" placeholder="Por ejemplo: hospital, agua, turnos..." autocomplete="off">
+<div class="filters" aria-label="Filtrar por tema">
+<button class="filter" type="button" data-filter="Todos" aria-pressed="true">🌈 Todos</button>
+<button class="filter" type="button" data-filter="Municipalidad" aria-pressed="false">🏛️ Municipalidad</button>
+<button class="filter" type="button" data-filter="Salud" aria-pressed="false">💚 Salud</button>
+<button class="filter" type="button" data-filter="Seguridad" aria-pressed="false">🛡️ Seguridad</button>
+<button class="filter" type="button" data-filter="Ayuda" aria-pressed="false">🤝 Ayuda y derechos</button>
+</div>
+<p class="muted">No te preocupes si no encontrás algo enseguida. Probá con otra palabra o elegí “Todos”.</p>
+</section>
 
-    <section class="section" aria-labelledby="seguridad">
-      <h2 id="seguridad">🛡️ Seguridad ciudadana</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="cardhead"><div class="symbol" aria-hidden="true">☎️</div><h3>Administración</h3></div>
-          <p class="kind">Seguridad Ciudadana</p>
-          <p class="phone">299 458 4229</p>
-          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>.</p>
-        </article>
-        <article class="card">
-          <div class="cardhead"><div class="symbol" aria-hidden="true">📣</div><h3>Denuncias</h3></div>
-          <p class="kind">Seguridad Ciudadana</p>
-          <p class="phone">299 631 8081</p>
-          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>. Este contacto municipal no reemplaza los números oficiales de emergencia.</p>
-        </article>
-        <article class="card">
-          <div class="cardhead"><div class="symbol" aria-hidden="true">🐾</div><h3>Zoonosis</h3></div>
-          <p class="kind">Animales y consultas</p>
-          <p class="phone">299 631 3103</p>
-          <p class="source">Fuente oficial: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>.</p>
-        </article>
-      </div>
-    </section>
+<div class="section-title"><span class="doodle" aria-hidden="true">🌸</span><div><h2>La agenda de teléfonos</h2><p class="muted">Contactos locales y líneas provinciales útiles.</p></div></div>
+<div class="cards" id="contactos">
+<article class="card" data-category="Municipalidad" data-search="municipalidad municipio telefono general direccion quilimal mal"><div class="cardhead"><div class="symbol">🏛️</div><h3>Municipalidad</h3></div><p class="category">Municipalidad · teléfono general</p><p class="phone">299 408 4225</p><p class="detail"><b>Dirección:</b> Quili Malal 314, San Patricio del Chañar.<br><b>Horario publicado:</b> lunes a viernes, 8:30 a 12:30. Conviene confirmar antes de ir.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/" target="_blank" rel="noopener noreferrer">sitio oficial municipal</a>.</p></article>
+<article class="card" data-category="Municipalidad" data-search="mesa entrada turnos tramites administracion"><div class="cardhead"><div class="symbol">📄</div><h3>Mesa de entrada y turnos</h3></div><p class="category">Municipalidad · administración</p><p class="phone">299 420 2609</p><p class="detail">Para consultar por mesa de entrada y turnos.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p></article>
+<article class="card" data-category="Municipalidad" data-search="recaudaciones pagos tasas impuestos municipalidad"><div class="cardhead"><div class="symbol">🧾</div><h3>Recaudaciones</h3></div><p class="category">Municipalidad · pagos y consultas</p><p class="phone">299 576 8856</p><p class="detail">Para consultas de recaudaciones municipales.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p></article>
+<article class="card" data-category="Municipalidad" data-search="compras proveedores municipalidad"><div class="cardhead"><div class="symbol">🛍️</div><h3>Compras municipales</h3></div><p class="category">Municipalidad · proveedores</p><p class="phone">299 421 4821</p><p class="detail">Contacto publicado para el área de Compras.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-administracion" target="_blank" rel="noopener noreferrer">Secretaría de Administración</a>.</p></article>
+<article class="card" data-category="Municipalidad" data-search="obras servicios publicos infraestructura calles agua consultas"><div class="cardhead"><div class="symbol">🛠️</div><h3>Obras y servicios públicos</h3></div><p class="category">Municipalidad · infraestructura</p><p class="phone">299 626 2687</p><p class="detail">Contacto de Coordinación e Infraestructura.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-cordinacion" target="_blank" rel="noopener noreferrer">Secretaría de Coordinación e Infraestructura</a>.</p></article>
+<article class="card" data-category="Seguridad" data-search="seguridad ciudadana administracion consultas"><div class="cardhead"><div class="symbol">🛡️</div><h3>Seguridad Ciudadana</h3></div><p class="category">Municipalidad · administración</p><p class="phone">299 458 4229</p><p class="detail">Contacto administrativo publicado por el municipio.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>.</p></article>
+<article class="card" data-category="Seguridad" data-search="denuncias seguridad ciudadana municipal"><div class="cardhead"><div class="symbol">📣</div><h3>Denuncias municipales</h3></div><p class="category">Seguridad Ciudadana</p><p class="phone">299 631 8081</p><p class="detail">Contacto municipal publicado para denuncias. No reemplaza los teléfonos de emergencia.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>.</p></article>
+<article class="card" data-category="Municipalidad" data-search="zoonosis animales perros gatos mascotas"><div class="cardhead"><div class="symbol">🐾</div><h3>Zoonosis</h3></div><p class="category">Municipalidad · animales</p><p class="phone">299 631 3103</p><p class="detail">Para consultas relacionadas con zoonosis y animales.</p><p class="source">Fuente: <a href="https://sanpatricio.gob.ar/sec-ciudadana" target="_blank" rel="noopener noreferrer">Secretaría de Seguridad Ciudadana</a>.</p></article>
+<article class="card" data-category="Salud" data-search="hospital san patricio del chanar salud consulta atención"><div class="cardhead"><div class="symbol">🏥</div><h3>Hospital San Patricio del Chañar</h3></div><p class="category">Salud · contacto institucional</p><p class="phone">299 485 5084</p><p class="badge caution">Confirmar el uso del número</p><p class="detail">Este teléfono aparece en una publicación institucional del Ministerio de Salud. Confirmá si sirve para tu consulta general; no está presentado aquí como línea de emergencia.</p><p class="source">Fuente: <a href="https://salud.neuquen.gob.ar/seleccion-eventual-de-lavandera-o-para-hospital-san-patricio-del-chanar/" target="_blank" rel="noopener noreferrer">Ministerio de Salud de Neuquén</a>.</p></article>
+<article class="card" data-category="Salud" data-search="emergencia médica sien ambulancia urgente"><div class="cardhead"><div class="symbol">🚑</div><h3>Emergencia médica — SIEN</h3></div><p class="category">Provincia · urgencias</p><p class="phone">107</p><p class="detail">Para emergencias de salud que necesitan asistencia urgente.</p><p class="source">Fuente: <a href="https://salud.neuquen.gob.ar/red-de-salud/" target="_blank" rel="noopener noreferrer">Ministerio de Salud de Neuquén</a>.</p></article>
+<article class="card" data-category="Seguridad" data-search="bomberos incendio humo rescate emergencia"><div class="cardhead"><div class="symbol">🚒</div><h3>Bomberos</h3></div><p class="category">Provincia · emergencia</p><p class="phone">100</p><p class="detail">Para incendios y emergencias que requieran bomberos.</p><p class="source">Fuente: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Seguridad" data-search="policia peligro inmediato emergencia"><div class="cardhead"><div class="symbol">👮</div><h3>Policía</h3></div><p class="category">Provincia · emergencia</p><p class="phone">101</p><p class="detail">Para situaciones de peligro o emergencia policial.</p><p class="source">Fuente: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Seguridad" data-search="defensa civil inundación tormenta desastre emergencia"><div class="cardhead"><div class="symbol">🌧️</div><h3>Defensa Civil</h3></div><p class="category">Provincia · emergencia</p><p class="phone">103</p><p class="detail">Para emergencias y situaciones que requieran intervención de Defensa Civil.</p><p class="source">Fuente: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Ayuda" data-search="maltrato infantil niñas niños ayuda derechos"><div class="cardhead"><div class="symbol">🧸</div><h3>Ayuda por maltrato infantil</h3></div><p class="category">Provincia · protección de la niñez</p><p class="phone">102</p><p class="detail">Línea útil publicada por organismos provinciales para situaciones de maltrato infantil.</p><p class="source">Fuente: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Ayuda" data-search="violencia de género familiar asistencia ayuda"><div class="cardhead"><div class="symbol">💜</div><h3>Asistencia por violencia</h3></div><p class="category">Provincia · orientación y ayuda</p><p class="phone">148</p><p class="detail">Línea provincial de asistencia para personas que atraviesan situaciones de violencia.</p><p class="source">Fuente: <a href="https://salud.neuquen.gob.ar/red-de-salud/" target="_blank" rel="noopener noreferrer">Ministerio de Salud de Neuquén</a>.</p></article>
+<article class="card" data-category="Ayuda" data-search="trata de personas explotación captación denuncia"><div class="cardhead"><div class="symbol">🧡</div><h3>Trata de personas</h3></div><p class="category">Línea nacional de ayuda</p><p class="phone">145</p><p class="detail">Línea publicada oficialmente para denunciar o pedir orientación ante posibles situaciones de trata de personas.</p><p class="source">Fuente: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Ayuda" data-search="vulnerabilidad derechos denunciar protección social"><div class="cardhead"><div class="symbol">🤝</div><h3>Vulneración de derechos</h3></div><p class="category">Provincia · orientación y denuncias</p><p class="phone">0800 333 0944</p><p class="detail">Número publicado para denuncias por vulnerabilidad de derechos.</p><p class="source">Fuente: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Ayuda" data-search="personas situación calle ayuda social"><div class="cardhead"><div class="symbol">🏠</div><h3>Personas en situación de calle</h3></div><p class="category">Provincia · orientación</p><p class="phone">0810 333 0944</p><p class="detail">Línea publicada para denuncias o avisos vinculados a personas en situación de calle.</p><p class="source">Fuente: <a href="https://copronaf.neuquen.gob.ar/nosotros/" target="_blank" rel="noopener noreferrer">Co.Pro.NAF — Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Seguridad" data-search="siniestros viales choque accidente ruta seguridad vial"><div class="cardhead"><div class="symbol">🚗</div><h3>Asistencia por siniestros viales</h3></div><p class="category">Provincia · seguridad vial</p><p class="phone">149</p><p class="detail">El Ministerio de Seguridad provincial publica este número para siniestros viales. En una urgencia inmediata, pedí asistencia al servicio de emergencia correspondiente.</p><p class="source">Fuente: <a href="https://seguridad.neuquen.gob.ar/direccion-provincial-de-seguridad/" target="_blank" rel="noopener noreferrer">Ministerio de Seguridad de Neuquén</a>.</p></article>
+<article class="card" data-category="Ayuda" data-search="defensa consumidor reclamos compras servicios"><div class="cardhead"><div class="symbol">🧺</div><h3>Defensa del Consumidor</h3></div><p class="category">Provincia · reclamos</p><p class="phone">0800 222 2667</p><p class="detail">Para consultas y reclamos relacionados con compras y servicios como consumidor.</p><p class="source">Fuente: <a href="https://ministeriodegobierno.neuquen.gob.ar/subsecretaria-de-gobierno-y-justicia/" target="_blank" rel="noopener noreferrer">Ministerio de Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Ayuda" data-search="registro civil dni actas nacimiento matrimonio provincia"><div class="cardhead"><div class="symbol">🪪</div><h3>Registro Civil provincial</h3></div><p class="category">Provincia · documentación</p><p class="phone">299 449 5422</p><p class="detail">Contacto de la Dirección Provincial de Registro Civil y Capacidad de las Personas. No es una oficina local del Chañar.</p><p class="source">Fuente: <a href="https://ministeriodegobierno.neuquen.gob.ar/subsecretaria-de-gobierno-y-justicia/" target="_blank" rel="noopener noreferrer">Ministerio de Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Ayuda" data-search="gobierno justicia orientación trámites provincia neuquen"><div class="cardhead"><div class="symbol">⚖️</div><h3>Gobierno y Justicia provincial</h3></div><p class="category">Provincia · orientación institucional</p><p class="phone">299 449 3910</p><p class="detail">Contacto de la Subsecretaría de Gobierno y Justicia provincial. Consultá si pueden orientarte sobre tu trámite.</p><p class="source">Fuente: <a href="https://ministeriodegobierno.neuquen.gob.ar/subsecretaria-de-gobierno-y-justicia/" target="_blank" rel="noopener noreferrer">Ministerio de Gobierno de Neuquén</a>.</p></article>
+<article class="card" data-category="Seguridad" data-search="ministerio seguridad neuquen contacto administración"><div class="cardhead"><div class="symbol">🔐</div><h3>Ministerio de Seguridad provincial</h3></div><p class="category">Provincia · contacto institucional</p><p class="phone">299 449 5100</p><p class="detail">Contacto institucional del Ministerio de Seguridad. No reemplaza el 101 en una emergencia policial.</p><p class="source">Fuente: <a href="https://seguridad.neuquen.gob.ar/direccion-provincial-de-seguridad/" target="_blank" rel="noopener noreferrer">Ministerio de Seguridad de Neuquén</a>.</p></article>
+<article class="card" data-category="Salud" data-search="ministerio salud neuquen central información sanitaria"><div class="cardhead"><div class="symbol">🌿</div><h3>Ministerio de Salud provincial</h3></div><p class="category">Provincia · contacto institucional</p><p class="phone">299 449 5590 / 91</p><p class="detail">Contacto institucional publicado por el Ministerio de Salud en Neuquén capital. No es una línea de urgencias.</p><p class="source">Fuente: <a href="https://salud.neuquen.gob.ar/red-de-salud/" target="_blank" rel="noopener noreferrer">Ministerio de Salud de Neuquén</a>.</p></article>
+</div>
+<div class="empty" id="sinResultados"><h3>🌼 Todavía no encontramos ese contacto</h3><p>Probá con una palabra más cortita o tocá “Todos” para volver a ver la agenda completa.</p></div>
 
-    <section class="section" aria-labelledby="salud">
-      <h2 id="salud">💚 Salud</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="cardhead"><div class="symbol" aria-hidden="true">🏥</div><h3>Hospital San Patricio del Chañar</h3></div>
-          <p class="kind">Teléfono publicado por Salud provincial</p>
-          <p class="phone">299 485 5084</p>
-          <p class="detail">Antes de depender de este número para una necesidad urgente, confirmá con el hospital si es el contacto adecuado para tu consulta.</p>
-          <p class="source">Fuente: <a href="https://salud.neuquen.gob.ar/seleccion-eventual-de-lavandera-o-para-hospital-san-patricio-del-chanar/" target="_blank" rel="noopener noreferrer">Ministerio de Salud de Neuquén</a>. Publicado en una convocatoria institucional; no se presenta como línea directa de emergencias.</p>
-        </article>
-      </div>
-    </section>
+<aside class="note"><b>🌷 Un pequeño cuidado:</b> los teléfonos pueden cambiar. Los contactos provinciales no necesariamente atienden en San Patricio del Chañar. Si un número no responde, consultá la página oficial de la institución. Para una urgencia, no uses teléfonos administrativos.</aside>
 
-    <aside class="note">
-      <strong>Un consejo importante:</strong> si hay peligro inmediato o una urgencia médica, buscá ayuda de una persona cercana y llamá al servicio de emergencia oficial correspondiente. Esta agenda está creciendo y todavía estamos verificando qué números locales conviene publicar como emergencias.
-    </aside>
-
-    <section class="donate" aria-labelledby="donar">
-      <h2 id="donar">💛 Una cajita para colaborar</h2>
-      <p>Solcito está hecho con cariño para acercar información útil a nuestros vecinos, especialmente a quienes más necesitan una mano.</p>
-      <p>Si esta agenda te sirve y querés ayudar a mantenerla, pronto vamos a compartir un alias para colaborar de manera voluntaria.</p>
-      <p><strong>Si hoy no podés colaborar, está todo bien.</strong> Podés usar y compartir esta agenda con tranquilidad.</p>
-      <div class="alias">Alias para colaborar: próximamente</div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p><strong>Solcito — Agenda vecinal</strong></p>
-      <p>Un proyecto amoroso de Ocarina Producciones para tender puentes entre vecinos, familias, personas mayores y sectores rurales.</p>
-      <p>Los teléfonos pueden cambiar. Si encontrás un dato incorrecto, confirmalo con la institución antes de usarlo y ayudanos a corregirlo.</p>
-      <p class="tiny">Información consultada en sitios oficiales el 19 de octubre de 2026. Solcito es una iniciativa comunitaria independiente; no es un sitio oficial del municipio ni de los servicios de salud.</p>
-    </div>
-  </footer>
+<section class="donate">
+<h2>💛 Una cajita de cariño</h2><p>Solcito nació para acercar información útil y hacer un poquito más fácil la vida cotidiana. Si esta agenda te ayuda y algún día querés colaborar con su mantenimiento, habrá una forma de hacerlo.</p><p><strong>La colaboración es totalmente voluntaria.</strong> Los teléfonos útiles y la información esencial seguirán siendo gratuitos. Si hoy no podés colaborar, está todo bien: compartir Solcito con alguien que lo necesite también es un regalo.</p><div class="alias">🌻 Alias para colaborar: próximamente</div>
+</section>
+</main>
+<footer><div class="wrap"><p><strong>☀️ Solcito — Una mano amiga, cerquita tuyo</strong></p><p>Una iniciativa comunitaria de Ocarina Producciones para tender puentes entre vecinos, familias, personas mayores y comunidades rurales.</p><p class="tiny">Los contactos se recopilaron de páginas oficiales provinciales y municipales consultadas el 19 de octubre de 2026. La publicación en Solcito no implica respaldo institucional. Si encontrás un dato que cambió, confirmalo con la institución antes de usarlo.</p><p class="tiny">Hecho con cariño, letras grandes y colores suaves. 🌼</p></div></footer>
+<script>
+(function(){
+ const search=document.getElementById('busqueda');
+ const cards=Array.from(document.querySelectorAll('#contactos .card'));
+ const filters=Array.from(document.querySelectorAll('.filter'));
+ const empty=document.getElementById('sinResultados');
+ let category='Todos';
+ function normalize(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
+ function render(){
+  const q=normalize(search.value.trim());
+  let shown=0;
+  cards.forEach(card=>{
+   const matchCategory=category==='Todos'||card.dataset.category===category;
+   const matchText=!q||normalize(card.innerText+' '+card.dataset.search).includes(q);
+   const visible=matchCategory&&matchText;
+   card.hidden=!visible;
+   if(visible)shown++;
+  });
+  empty.style.display=shown?'none':'block';
+ }
+ filters.forEach(button=>button.addEventListener('click',()=>{
+  category=button.dataset.filter;
+  filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  render();
+ }));
+ search.addEventListener('input',render);
+})();
+</script>
 </body>
 </html>
