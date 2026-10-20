@@ -79,6 +79,9 @@ p{margin:8px 0}
 .btn:hover{background:var(--green-dark)}
 .btn.secondary{border:1px solid #cfc3f4;background:#f0eaff;color:#493e78;box-shadow:none}
 .whatsapp-btn{background:#18784b;color:#fff}
+.share-card-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;margin-top:10px;padding:8px 12px;border:1px solid #b8d9c4;border-radius:12px;background:#edf8f0;color:#205a3b;text-decoration:none;font-size:.9rem;font-weight:800}
+.share-card-btn:hover{background:#dff2e5}
+.share-card-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .emergency{margin:18px 0 22px;padding:17px;border:2px solid #e7aab9;border-radius:22px;background:linear-gradient(135deg,#fff0f2,#fff8e9);box-shadow:0 4px 0 #f1dadd}
 .emergency h2{color:#8e2e4a}
 .emergency>p{font-size:.96rem}
@@ -529,6 +532,60 @@ footer p{margin:9px 0}
   if(head)head.insertAdjacentElement('afterend',status);
   else card.prepend(status);
  });
+
+ // Compartir por WhatsApp: mensajes claros, legibles y sin afirmar verificaciones inexistentes.
+ const agendaUrl='https://eliasmartinezcultural-glitch.github.io/Solcito/';
+ const whatsappUrl=text=>'https://wa.me/?text='+encodeURIComponent(text);
+ const agendaShareText=[
+  '☀️ SOLCITO | Agenda comunitaria de San Patricio del Chañar',
+  '',
+  'Teléfonos útiles, emergencias y contactos locales en un solo lugar.',
+  'Es gratuita y está abierta para toda la comunidad.',
+  '',
+  'Abrí la agenda y buscá el contacto que necesitás:',
+  agendaUrl,
+  '',
+  'Si te sirve, compartila con alguien más. 💛',
+  'Ocarina Producciones'
+ ].join('\\n');
+ const agendaShare=document.querySelector('.actions .whatsapp-btn');
+ if(agendaShare){
+  agendaShare.href=whatsappUrl(agendaShareText);
+  agendaShare.target='_blank';
+  agendaShare.rel='noopener noreferrer';
+ }
+ cards.forEach(card=>{
+  if(card.querySelector('.share-card-btn'))return;
+  const title=card.querySelector('h3')?.innerText.trim()||'Contacto de la agenda';
+  const categoryText=card.querySelector('.category')?.innerText.trim()||'Contacto útil';
+  const phoneText=card.querySelector('.phone')?.innerText.trim().replace(/\\s*Copiar número\\s*/g,'')||'No se publica un teléfono en esta ficha';
+  const detailText=card.querySelector('.detail')?.innerText.trim().replace(/\\s+/g,' ')||'';
+  const sourceLink=card.querySelector('.source a[href]');
+  const sourceUrl=sourceLink?sourceLink.href:'';
+  const shareParts=[
+   '☀️ SOLCITO · CONTACTO ÚTIL',
+   '',
+   title,
+   categoryText,
+   phoneText==='No se publica un teléfono en esta ficha'?'':('Teléfono publicado: '+phoneText),
+   detailText?'Información: '+detailText:'',
+   '',
+   'Agenda comunitaria gratuita de San Patricio del Chañar:',
+   agendaUrl,
+   sourceUrl?'Fuente consultada: '+sourceUrl:'',
+   '',
+   'Importante: el dato publicado no garantiza que el teléfono siga activo. Si es urgente, usá el servicio de emergencia correspondiente.'
+  ].filter(Boolean);
+  const link=document.createElement('a');
+  link.className='share-card-btn';
+  link.href=whatsappUrl(shareParts.join('\\n'));
+  link.target='_blank';
+  link.rel='noopener noreferrer';
+  link.textContent='💚 Compartir esta ficha por WhatsApp';
+  link.setAttribute('aria-label','Compartir '+title+' por WhatsApp');
+  card.appendChild(link);
+ });
+
  const filters=Array.from(document.querySelectorAll('.filter'));
  const empty=document.getElementById('sinResultados');
  let category='Todos';
