@@ -1,6 +1,6 @@
 /* Solcito: motor de actualización y caché offline. Versión identificable para evitar copias antiguas. */
 const CACHE_PREFIX = 'solcito-shell-';
-const CACHE_NAME = 'solcito-shell-v3';
+const CACHE_NAME = 'solcito-shell-v4';
 const SHELL_URL = new URL('./index.html', self.registration.scope).href;
 
 self.addEventListener('install', event => {
