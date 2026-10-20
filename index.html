@@ -89,6 +89,17 @@ p{margin:8px 0}
 .emergency-link span{font-size:.9rem;font-weight:700;line-height:1.35}
 .emergency-link b{color:#a12d3d;font-size:clamp(1.8rem,4vw,2.2rem);line-height:1.2;font-variant-numeric:tabular-nums}
 .source{margin-top:10px;padding-top:8px;border-top:1px solid #e8e0d9;font-size:.82rem;line-height:1.5}
+.verification-status{display:flex;align-items:flex-start;gap:7px;margin:9px 0 7px;padding:8px 10px;border:1px solid #d9d1c4;border-radius:11px;background:#fffdf7;color:#4b5358;font-size:.82rem;line-height:1.4;font-weight:800}
+.verification-status .verification-icon{flex:0 0 auto}
+.verification-status[data-level="official"]{border-color:#c8dfce;background:#f0f8f1;color:#245a3e}
+.verification-status[data-level="source"]{border-color:#d9d1f0;background:#f6f3ff;color:#514778}
+.verification-status[data-level="pending"]{border-color:#e8d7b4;background:#fff8e8;color:#75531b}
+.verification-status[data-level="direct"]{border-color:#b8ddc6;background:#e8f7ed;color:#185b38}
+.verification-legend{margin:14px 0;padding:13px 15px;border:1px solid #ded6cb;border-radius:16px;background:#fffdf8}
+.verification-legend h3{margin-bottom:7px}
+.verification-legend ul{margin:7px 0 0;padding-left:21px}
+.verification-legend li{margin:5px 0;font-size:.9rem}
+
 .doodle-garden{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;margin:20px auto}
 .doodle-art{width:clamp(44px,7vw,68px);height:auto;flex:0 0 auto}
 .garden-caption{max-width:240px;color:#6d536a;text-align:center;font-weight:800;line-height:1.4}
@@ -369,6 +380,15 @@ footer p{margin:9px 0}
 <section class="emergency" aria-labelledby="urgencias">
 <h2 id="urgencias">❤️ Si necesitás ayuda urgente</h2>
 <p>Elegí el número que corresponda a la situación. Si estás en peligro o no sabés qué hacer, buscá también a una persona cercana que pueda acompañarte.</p>
+<div class="verification-legend" role="note" aria-label="Cómo leer la verificación de los contactos">
+<h3>🔎 Qué significa cada estado</h3>
+<ul>
+<li><b>Fuente oficial encontrada:</b> el dato aparece en un sitio oficial, pero no confirmamos por llamada que siga activo.</li>
+<li><b>Fuente consultada:</b> encontramos una referencia, pero no es una fuente oficial identificada.</li>
+<li><b>Pendiente de confirmar:</b> no encontramos una fuente suficiente para publicar el dato como verificado.</li>
+<li><b>Comprobado directamente:</b> solo se mostrará si se registra una comprobación real y su fecha. Actualmente no marcamos ningún contacto con este nivel.</li>
+</ul>
+</div>
 <div class="emergency-grid">
 <a class="emergency-link" href="tel:107"><span>🚑 Emergencia médica · SIEN</span><b>107</b></a>
 <a class="emergency-link" href="tel:100"><span>🚒 Bomberos</span><b>100</b></a>
@@ -478,11 +498,37 @@ footer p{margin:9px 0}
 (function(){
  const search=document.getElementById('busqueda');
  const cards=Array.from(document.querySelectorAll('.contact-card'));
- const firstLocal=document.querySelector('#contactos-locales .contact-card');
- if(firstLocal&&firstLocal.querySelector('.phone')&&!firstLocal.querySelector('.badge')){
-  const verified=document.createElement('p');verified.className='badge';verified.textContent='Teléfono publicado por la Municipalidad';
-  firstLocal.querySelector('.phone').insertAdjacentElement('afterend',verified);
- }
+
+ // Estado de verificación conservador: ninguna ficha se considera comprobada por llamada.
+ // El dominio oficial acredita la procedencia publicada, no que el número siga activo.
+ const officialDomains=['sanpatricio.gob.ar','neuquen.gob.ar','neuquen.gov.ar','sican.neuquen.gov.ar','argentina.gob.ar','educacionneuquen.gov.ar','neuquen.edu.ar'];
+ cards.forEach(card=>{
+  if(card.querySelector('.verification-status'))return;
+  const source=card.querySelector('.source a[href]');
+  const url=source?source.getAttribute('href'):'';
+  let level='pending',icon='🟡',label='Pendiente de confirmar: no hay una fuente suficiente identificada.';
+  if(source){
+   let host='';
+   try{host=new URL(url,window.location.href).hostname.toLowerCase();}catch(e){}
+   const isOfficial=officialDomains.some(domain=>host===domain||host.endsWith('.'+domain));
+   if(isOfficial){
+    level='official';icon='🟢';label='Fuente oficial encontrada · vigencia no comprobada directamente.';
+   }else{
+    level='source';icon='🟣';label='Fuente consultada · vigencia no comprobada directamente.';
+   }
+  }
+  if(card.dataset.verification==='direct'){
+   level='direct';icon='✅';label='Comprobado directamente · revisar la fecha de verificación indicada.';
+  }
+  const status=document.createElement('p');
+  status.className='verification-status';
+  status.dataset.level=level;
+  status.innerHTML='<span class="verification-icon" aria-hidden="true">'+icon+'</span><span></span>';
+  status.lastElementChild.textContent=label;
+  const head=card.querySelector('.cardhead');
+  if(head)head.insertAdjacentElement('afterend',status);
+  else card.prepend(status);
+ });
  const filters=Array.from(document.querySelectorAll('.filter'));
  const empty=document.getElementById('sinResultados');
  let category='Todos';
