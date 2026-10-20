@@ -547,7 +547,7 @@ footer p{margin:9px 0}
   '',
   'Si te sirve, compartila con alguien más. 💛',
   'Ocarina Producciones'
- ].join('\\n');
+ ].join('\n');
  const agendaShare=document.querySelector('.actions .whatsapp-btn');
  if(agendaShare){
   agendaShare.href=whatsappUrl(agendaShareText);
@@ -558,8 +558,8 @@ footer p{margin:9px 0}
   if(card.querySelector('.share-card-btn'))return;
   const title=card.querySelector('h3')?.innerText.trim()||'Contacto de la agenda';
   const categoryText=card.querySelector('.category')?.innerText.trim()||'Contacto útil';
-  const phoneText=card.querySelector('.phone')?.innerText.trim().replace(/\\s*Copiar número\\s*/g,'')||'No se publica un teléfono en esta ficha';
-  const detailText=card.querySelector('.detail')?.innerText.trim().replace(/\\s+/g,' ')||'';
+  const phoneText=card.querySelector('.phone')?.innerText.trim().replace(/\s*Copiar número\s*/g,'')||'No se publica un teléfono en esta ficha';
+  const detailText=card.querySelector('.detail')?.innerText.trim().replace(/\s+/g,' ')||'';
   const sourceLink=card.querySelector('.source a[href]');
   const sourceUrl=sourceLink?sourceLink.href:'';
   const shareParts=[
@@ -578,7 +578,7 @@ footer p{margin:9px 0}
   ].filter(Boolean);
   const link=document.createElement('a');
   link.className='share-card-btn';
-  link.href=whatsappUrl(shareParts.join('\\n'));
+  link.href=whatsappUrl(shareParts.join('\n'));
   link.target='_blank';
   link.rel='noopener noreferrer';
   link.textContent='💚 Compartir esta ficha por WhatsApp';
