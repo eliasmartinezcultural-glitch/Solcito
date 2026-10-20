@@ -159,6 +159,10 @@ button.welcome-path{width:100%}
 .solcito-goodbye p{line-height:1.55}
 .goodbye-signoff{margin-bottom:0}
 .donate-float{position:fixed;z-index:50;right:14px;bottom:14px;display:grid;grid-template-columns:26px minmax(0,1fr);gap:6px 8px;align-items:start;width:238px;max-width:calc(100vw - 28px);padding:12px;border:1px solid #d8b3a8;border-radius:16px;background:linear-gradient(145deg,#fff6d7,#ffedf2 62%,#f0eaff);box-shadow:0 7px 24px #51443b30,0 0 0 3px #ffffffc4;color:#38433d}
+.donate-float{padding-top:31px}
+.close-donate{position:absolute;top:5px;right:7px;display:grid;place-items:center;width:28px;height:28px;border:1px solid #d9c5c6;border-radius:50%;background:#fff;color:#49534e;font-size:22px;line-height:1;cursor:pointer}
+.close-donate:hover{background:#f8e7eb}
+.donate-float.is-hidden{display:none}
 .donate-float-flower{font-size:22px}
 .donate-float-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
 .donate-float-copy strong{color:#315746;font-size:.88rem;line-height:1.25}
@@ -485,6 +489,7 @@ footer p{margin:9px 0}
 </section>
 
 <aside class="donate-float" id="colaborar" aria-label="Cartelito de colaboración voluntaria">
+  <button class="close-donate" type="button" aria-label="Ocultar cartelito de donación" title="Ocultar cartelito">×</button>
   <span class="donate-float-flower" aria-hidden="true">🌼</span>
   <div class="donate-float-copy">
     <strong>¿Nos ayudás a cuidar Solcito?</strong>
@@ -626,6 +631,14 @@ footer p{margin:9px 0}
    });
    phone.appendChild(button);
   });
+ const donateBanner=document.querySelector('.donate-float');
+ const closeDonate=document.querySelector('.close-donate');
+ if(donateBanner&&closeDonate){
+  closeDonate.addEventListener('click',()=>{
+   donateBanner.classList.add('is-hidden');
+   donateBanner.setAttribute('aria-hidden','true');
+  });
+ }
  document.querySelectorAll('.copy-alias').forEach(copyButton=>{
   copyButton.addEventListener('click',async()=>{
    const alias='ocarina.guitarra';
